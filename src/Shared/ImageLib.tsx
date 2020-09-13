@@ -19,4 +19,4 @@ export const ImagesMobile = {
   'house2': house2,
 }
 
-export type imageLib = 'rkh' | 'house1' | 'hosue2';
+export type imageLib = 'rkh' | 'house1' | 'house2';
