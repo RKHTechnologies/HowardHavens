@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import styled, { keyframes } from 'styled-components';
-import house1 from '../house1.jpeg';
+import styled from 'styled-components';
+// import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
 import scrollComponent from '../scrollComponent.png';
 import HeaderNav from '../Components/HeaderNav';
 import { colours } from '../Shared/SharedStyles';
-import Contact from '../components/Contact';
+import Contact from '../Components/Contact';
+import FullScreenHero from '../Components/FullScreenHero';
 
 interface sectionProps {
     dark?: boolean;
@@ -34,101 +35,13 @@ export const Section = styled.div`
     }
 `;
 
-const LandingSection = styled.div`
-    height: 100vh;
-    background-image: url(${house1});
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: calc(100% + 42px);
-    background-position-x: center;
-
-    @media(max-width: 1200px) {
-        background-position-y: initial;
-    }
-
-    & filter {
-        content: '';
-        position: absolute;
-        background: #6A6A6A;
-        opacity: 0.45;
-        top: 0;
-        right: 0;
-        left: 0;
-        height: 100vh;
-    }
-`;
-
 const SectionHeader = styled.h1`
-    color: ${colours.white};
-    border-bottom: 1px solid ${colours.orange};
+    color: ${colours.light};
+    border-bottom: 1px solid ${colours.primary};
     letter-spacing: 5px;
     font-weight: 300;
     font-size: 1.7em;
     text-transform: uppercase;
-`;
-
-
-const MainText = styled.div`
-    color: white;
-    font-family: 'Montserrat';  
-    font-weight: 200;
-    position: absolute;
-    font-size: 8vw;
-    letter-spacing: 20px;
-    text-indent: 20px;
-    text-align: center;
-    top: 10%;
-    width: 100%;
-    line-height: 110px;
-    display: flex;
-    justify-content: space-around;
-
-
-    @media(max-width: 1060px) {
-        font-weight: 300;
-        font-size: 11vw;
-        line-height: 120px;
-        flex-direction: column;
-    }
-`;
-
-
-const MainLogo = styled.div`
-    background-image: url(${logoWhite});
-    background-size: 100%;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    width: 30%;
-    height: 50%;
-    position: absolute;
-    top: 34%;
-    left: 37.8%;
-
-    @media(max-width: 1060px) {
-        width: 50%;
-        height:50%;
-        top: 36%;
-        left: 30%;
-    }
-`;
-
-const bounce = keyframes`
-    0% { transform: translate(0,0); }
-    25% { transform: translate(0, -25px); }
-    50% { transform: translate(0,0); }
-`;
-
-const ScrollArrow = styled.a`
-    background-image: url(${scrollComponent});
-    background-size: 100%;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    width: 80px;
-    height: 100px;
-    position: absolute;
-    bottom: 10px;
-    left: calc(50% - 40px);
-    animation: ${bounce} 1s infinite;
 `;
 
 const Home: React.FC = () => {
@@ -140,16 +53,8 @@ const Home: React.FC = () => {
 
     return (
     <>
-        {/* <HeaderNav stickyHeader={stickyHeader} />
-        <LandingSection>
-            <filter />
-            <MainLogo />
-            <MainText>
-                <div>HOWARD</div>
-                <div>HAVENS</div>
-            </MainText>
-            <ScrollArrow href="#about"/>
-        </LandingSection>
+        <HeaderNav stickyHeader={stickyHeader} />
+        <FullScreenHero />
         <Section dark id="about">
             <SectionHeader>Who we are</SectionHeader>
             Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
@@ -158,7 +63,7 @@ const Home: React.FC = () => {
             <SectionHeader>What we do</SectionHeader>
             Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
         </Section>
-        <Contact /> */}
+        <Contact />
     </>
     );
 };

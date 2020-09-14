@@ -13,7 +13,7 @@ interface ColoursProps {
 export const colours: ColoursProps = {
     light: "#FFF",
     dark: "#000",
-    primary: "#7414DC",
+    primary: "#E78200",
     darkGrey: "#707070",
     lightGrey: "#D2D2D2",
 }

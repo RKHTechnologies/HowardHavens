@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Section } from "./Home";
+import { Section } from "../pages/Home";
 import { colours } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHammer, faSearchLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -56,15 +56,15 @@ const Link = styled.div`
   cursor: pointer;
   margin: 10px;
   background: ${(p: LinkProps): string => p.active ? "#fff" : "transparent"};
-  color: ${(p: LinkProps): string => p.active ? colours.orange : colours.white};
+  color: ${(p: LinkProps): string => p.active ? colours.primary : colours.light};
   font-weight: 400;
 
   & > div {
-    background: ${(p: LinkProps): string => p.active ? colours.orange : colours.white};
+    background: ${(p: LinkProps): string => p.active ? colours.primary : colours.light};
   }
 
   &:hover {
-    border-color: ${colours.white};
+    border-color: ${colours.light};
   }
 
   &:nth-child(even) {
@@ -103,7 +103,7 @@ const Column = styled.div`
 const FormItem = styled.input`
     width: 100%;
     height: 50px;
-    background: ${colours.white};
+    background: ${colours.light};
     border: 0;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -114,7 +114,7 @@ const FormItem = styled.input`
 const MultiLineForm = styled.textarea`
   width: 100%;
   height: 120px;
-  background: ${colours.white};
+  background: ${colours.light};
   border: 0;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -137,8 +137,8 @@ const SubmitButton = styled.input`
   cursor: pointer;
 
   &:hover {
-    background: ${colours.white};
-    color: ${colours.orange};
+    background: ${colours.light};
+    color: ${colours.primary};
   }
 `;
 
@@ -178,7 +178,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Section background={colours.orange}>
+    <Section background={colours.primary}>
         <Container>
           <MainHeader>Contact Us</MainHeader>
           <SubHeader>Please get in touch today if you have any questions, are interested in any of our services - or are looking for hassle free solutions to your property needs!</SubHeader>
