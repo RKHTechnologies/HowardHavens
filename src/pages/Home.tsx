@@ -140,7 +140,7 @@ const Home: React.FC = () => {
 
     return (
     <>
-        <HeaderNav stickyHeader={stickyHeader} />
+        {/* <HeaderNav stickyHeader={stickyHeader} />
         <LandingSection>
             <filter />
             <MainLogo />
@@ -158,7 +158,7 @@ const Home: React.FC = () => {
             <SectionHeader>What we do</SectionHeader>
             Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
         </Section>
-        <Contact />
+        <Contact /> */}
     </>
     );
 };
