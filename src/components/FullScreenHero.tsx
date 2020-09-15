@@ -31,7 +31,7 @@ const LandingSection = styled.div`
 const MainText = styled.div`
     color: white;
     font-family: 'Montserrat';  
-    font-weight: 200;
+    font-weight: 200 !important;
     position: absolute;
     font-size: 8vw;
     letter-spacing: 20px;

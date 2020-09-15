@@ -1,34 +1,55 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { colours } from '../Shared/SharedStyles';
+import { colours, SharedSettings } from '../Shared/SharedStyles';
 import { useHistory } from 'react-router-dom';
 import { ImagesDesktop } from '../Shared/ImageLib';
+
+interface IProps {
+    stickyHeader?: boolean;
+}
 
 interface menuProps {
     menuOpen? : boolean;
 }
 
+const HeaderBar = styled.div`
+    position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
+    top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: ${colours.dark}b0;
+    z-index: 2;
+
+    @media(max-width: ${SharedSettings.mobile}) {
+      background: ${colours.dark};
+    }
+`;
+
 const HeaderNavContainer = styled.div`
     width: 100%;
-    max-width: 1800px;
+    max-width: ${SharedSettings.maxWidth};
     margin: auto;
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
-    top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
-    background: #000;
     z-index: 1;
     transition: height 0.3s ease;
 
     & > img {
         height: 50px;
         margin-left: 50px;
+
+        @media(max-width: 350px) {
+            margin-left: 10px;
+        }
     }
 
-    @media(min-width: 1800px) {
-        left: calc(50% - 900px);    
+    @media(min-width: ${SharedSettings.maxWidth}) {
+        left: calc(50% - ${SharedSettings.maxWidthHalf});    
     }
 `;
 
@@ -37,7 +58,7 @@ const Logo = styled.img`
 `;
 
 
-const HeaderButton = styled.button`
+const HeaderButton = styled.a`
     height: 100%;
     background: transparent;
     color: ${colours.light};
@@ -46,13 +67,14 @@ const HeaderButton = styled.button`
     text-indent: 5px;
     padding: 27px 25px;
     cursor: pointer;
+    text-decoration: none;
     
     &:hover {
         color: ${colours.primary};
     }
 
     &:last-child {
-        margin-right: 50px;
+        margin-right: 20px;
     }
 `;
 
@@ -65,18 +87,39 @@ const NavItemsRightContainer = styled.div`
     @media( max-width: 1100px ) {
         flex-direction: column;
         align-self: flex-start;
-        margin-top: 70px;
-        transition: all 0.3s ease;
-        height: ${(p:menuProps) => p.menuOpen ? "400px" : "0"};
+        /* margin-top: 70px; */
+        height: ${(p:menuProps) => p.menuOpen ? "80vh" : "0"};
+        position: fixed;
+        top: 0;
+        left: 20px;
+        right: 20px;
+        background: ${colours.dark};
+        z-index: 3;
 
         ${HeaderButton} {
-            display: initial;
+            text-align: center;
+            border-radius: 0;
+            color: ${colours.light};
+            padding: 0 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:last-child {
+                margin-right: 0;
+            }
+            /* display: initial;
             margin-right: 20px;
             text-align: right;
             border-radius: 0;
             background: #1f1f1f;
-            padding: 0 25px;
+            padding: 0 25px; */
         }
+    }
+
+    @media( max-width: 350px) {
+        left: 5px;
+        right: 5px;
     }
 `;
 
@@ -148,21 +191,29 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
 
     const handleNav = (link: string): void => {
         console.log("clicked nav", link);
-        history.push(`/howardhavens/${link}`);
+        history.push(`${process.env.PUBLIC_URL}${link}`);
     }
 
     return (
-        <HeaderNavContainer stickyHeader={stickyHeader}>
-            <Logo src={ImagesDesktop['logoWhite']} alt="Howard Havens Logo" onClick={() => handleNav("")} />
-            <NavItemsRightContainer menuOpen={menuOpen}>
-                <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
-                <HeaderButton onClick={() => handleNav("#about")}>ABOUT US</HeaderButton>
-                <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton>
-                <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton>
-                <HeaderButton onClick={() => handleNav("projects")}>PROJECTS</HeaderButton>
-                <HeaderButton onClick={() => handleNav("contact")}>CONTACT</HeaderButton>
-            </NavItemsRightContainer>
+      <HeaderBar stickyHeader={stickyHeader}>
+        <HeaderNavContainer>
+          <Logo src={ImagesDesktop['logoWhite']} alt="Howard Havens Logo" onClick={() => handleNav("")} />
+          <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
+
+          <NavItemsRightContainer menuOpen={menuOpen}>  
+            <HeaderButton href="#about">ABOUT US</HeaderButton>
+            <HeaderButton href="#lettings">LETTINGS</HeaderButton>
+            <HeaderButton href="#dealsourcing">DEAL SOURCING</HeaderButton>
+            <HeaderButton href="#projects">PROJECTS</HeaderButton>
+            <HeaderButton href="#contact">CONTACT</HeaderButton>
+            {/* <HeaderButton  href="#about" onClick={() => handleNav("#about")}>ABOUT US</HeaderButton> */}
+            {/* <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton> */}
+            {/* <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton> */}
+            {/* <HeaderButton onClick={() => handleNav("projects")}>PROJECTS</HeaderButton> */}
+            {/* <HeaderButton onClick={() => handleNav("contact")}>CONTACT</HeaderButton> */}
+          </NavItemsRightContainer>
         </HeaderNavContainer>
+      </HeaderBar>
     );
 }
 

@@ -21,24 +21,38 @@ const MainHeader = styled.h1`
   text-transform: uppercase;
   letter-spacing: 7px;
   font-weight: 400;
+  color: ${colours.dark};
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-top: 20px;
 `;
 
 const SubHeader = styled.div`
   max-width: 1000px;
+  font-weight: 500;
+  color: ${colours.dark};
+
+  span {
+    color: ${colours.light};
+    font-weight: 300;
+    font-style: italic;
+  }
 `;
 
 const LinksContainer = styled.div`
-  width: 100%;
   padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
   max-width: 1000px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
 
   @media(max-width: 1100px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: 1fr;
+    font-size: 0.7em;
+    margin: 0;
+  }
+  
+  @media(max-width: 340px) {
+    font-size: 0.5em;
   }
 `;
 
@@ -75,7 +89,9 @@ const Link = styled.div`
 
   @media(max-width: 1100px) {
     flex-direction: row !important;
-    padding: 10px 18px 14px 0 !important;
+    padding: 0 18px 0 0 !important;
+    margin: 0;
+    border-radius: 8px;
   }
 `;
 
@@ -120,24 +136,25 @@ const MultiLineForm = styled.textarea`
   margin-bottom: 20px;
   box-sizing: border-box;
   padding: 18px 20px 0;
-  font-family: Arial, Helvetica, sans-serif;
 `;
 
 const SubmitButton = styled.input`
   width: 300px;
   height: 50px;
-  border-radius: 30px;
-  border: 3px solid #fff;
+  /* border-radius: 30px; */
+  border-radius: 5px;
+  border: 3px solid #000;
   background: transparent;
   letter-spacing: 6px;
-  color: #fff;
+  color: #000;
   font-size: 20px;
   line-height: 44px;
   font-weight: 600;
+  margin-top: 20px;
   cursor: pointer;
 
   &:hover {
-    background: ${colours.light};
+    background: ${colours.dark};
     color: ${colours.primary};
   }
 `;
@@ -178,10 +195,10 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Section background={colours.primary}>
+    <Section background={colours.primary} id="contact">
         <Container>
           <MainHeader>Contact Us</MainHeader>
-          <SubHeader>Please get in touch today if you have any questions, are interested in any of our services - or are looking for hassle free solutions to your property needs!</SubHeader>
+          <SubHeader>Please get in touch <span>today</span> if you have any questions, are interested in any of our <span>services</span> - or are looking for <span>hassle free solutions</span> to your property needs!</SubHeader>
 
           <LinksContainer>
             <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>

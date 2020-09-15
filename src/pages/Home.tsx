@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-// import house1 from '../house1.jpeg';
-import logoWhite from '../logoWhite.svg';
-import scrollComponent from '../scrollComponent.png';
 import HeaderNav from '../Components/HeaderNav';
 import { colours } from '../Shared/SharedStyles';
 import Contact from '../Components/Contact';
@@ -18,18 +15,17 @@ export const Section = styled.div`
     background: ${(p: sectionProps) => p.background};
     color: ${(p: sectionProps) => p.dark ? colours.light : "inherit"};
     padding: 50px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
     
     &#about {
         padding-top: 130px;
     }
 
-    @media(min-width: 1800px) {
-        width: 1700px;
-        margin: auto;
-    }
     @media(max-width: 1100px) {
         padding: 20px;
     }
@@ -63,7 +59,7 @@ const Home: React.FC = () => {
             <SectionHeader>What we do</SectionHeader>
             Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
         </Section>
-        <Contact />
+        <Contact  />
     </>
     );
 };

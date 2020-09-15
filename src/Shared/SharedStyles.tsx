@@ -11,8 +11,8 @@ interface ColoursProps {
 }
 
 export const colours: ColoursProps = {
-    light: "#FFF",
-    dark: "#000",
+    light: "#FFFFFF",
+    dark: "#000000",
     primary: "#E78200",
     darkGrey: "#707070",
     lightGrey: "#D2D2D2",
@@ -26,8 +26,8 @@ interface SettingsProps {
 }
 
 export const SharedSettings: SettingsProps = {
-    maxWidth: "1400px",
-    maxWidthHalf: "700px",
+    maxWidth: "1800px",
+    maxWidthHalf: "900px",
     mobile: "1100px",
 }
 
