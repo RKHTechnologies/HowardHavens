@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Section } from "../pages/Home";
-import { colours } from "../Shared/SharedStyles";
+import { colours, Section } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHammer, faSearchLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+interface ContainerProps {
+  dark?: boolean;
+  background?: string;
+}
 
 const Container = styled.div`
   width: 100%;
@@ -15,6 +19,12 @@ const Container = styled.div`
   text-align: center;
   font-weight: 100;
   font-size: 1.6em;
+  background: ${(p: ContainerProps) => p.dark ? "#000" : "inherit"};
+  background: ${(p: ContainerProps) => p.background};
+  color: ${(p: ContainerProps) => p.dark ? colours.light : "inherit"};
+  padding: 50px;
+  overflow: hidden;
+  box-sizing: border-box;
 `;
 
 const MainHeader = styled.h1`
@@ -195,46 +205,44 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Section background={colours.primary} id="contact">
-        <Container>
-          <MainHeader>Contact Us</MainHeader>
-          <SubHeader>Please get in touch <span>today</span> if you have any questions, are interested in any of our <span>services</span> - or are looking for <span>hassle free solutions</span> to your property needs!</SubHeader>
+    <Container background={colours.primary}>
+      <MainHeader>Contact Us</MainHeader>
+      <SubHeader>Please get in touch <span>today</span> if you have any questions, are interested in any of our <span>services</span> - or are looking for <span>hassle free solutions</span> to your property needs!</SubHeader>
 
-          <LinksContainer>
-            <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>
-              <Icon icon={faHome} size="2x" />
-              Lettings@howardhavens.co.uk
-            </Link>
-            <Link active={activeLink === "Projects"} onClick={() => setActiveLink("Projects")}>
-              <Icon icon={faHammer} size="2x"/>
-              Projects@howardhavens.co.uk
-            </Link>
-            <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
-              <Icon icon={faSearchLocation} size="2x"/>
-              Sourcing@howardhavens.co.uk
-            </Link>
-            <Link active={activeLink === "Contact"} onClick={() => setActiveLink("Contact")}>
-              <Icon icon={faEnvelope} size="2x"/>
-              Contact@howardhavens.co.uk
-            </Link>
-          </LinksContainer>
+      <LinksContainer>
+        <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>
+          <Icon icon={faHome} size="2x" />
+          Lettings@howardhavens.co.uk
+        </Link>
+        <Link active={activeLink === "Projects"} onClick={() => setActiveLink("Projects")}>
+          <Icon icon={faHammer} size="2x"/>
+          Projects@howardhavens.co.uk
+        </Link>
+        <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
+          <Icon icon={faSearchLocation} size="2x"/>
+          Sourcing@howardhavens.co.uk
+        </Link>
+        <Link active={activeLink === "Contact"} onClick={() => setActiveLink("Contact")}>
+          <Icon icon={faEnvelope} size="2x"/>
+          Contact@howardhavens.co.uk
+        </Link>
+      </LinksContainer>
 
-          <FormContainer onSubmit={handleSubmit}>
-            <Column>
-              <FormItem placeholder="Name" name="name" />
-              <FormItem placeholder="Email" name="email" />
-              <FormItem placeholder="Phone (optional)" name="phone" />
-            </Column>
+      <FormContainer onSubmit={handleSubmit}>
+        <Column>
+          <FormItem placeholder="Name" name="name" />
+          <FormItem placeholder="Email" name="email" />
+          <FormItem placeholder="Phone (optional)" name="phone" />
+        </Column>
 
-            <Column>
-              <FormItem placeholder="Subject" name="subject" />
-              <MultiLineForm placeholder="Your Message" name="message"></MultiLineForm>
-            </Column>
-            <SubmitButton type="submit" value="SUBMIT" />
-          </FormContainer>
+        <Column>
+          <FormItem placeholder="Subject" name="subject" />
+          <MultiLineForm placeholder="Your Message" name="message"></MultiLineForm>
+        </Column>
+        <SubmitButton type="submit" value="SUBMIT" />
+      </FormContainer>
 
-        </Container>
-    </Section>
+    </Container>
   );
 };
 

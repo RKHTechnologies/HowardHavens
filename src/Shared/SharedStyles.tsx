@@ -49,29 +49,29 @@ export const PageBodyContainer = styled.div`
 
 
 interface SectionProps {
-    dark?: boolean;
-  }
+  fullwidth?: boolean;
+  lastItem?: boolean;
+  topSpace?: boolean;
+}
 
-export const SectionContainer = styled.div`
-  min-height: 200px;
+export const Section = styled.div`
   width: 100%;
+  min-height: 200px;
+  padding: ${(p: SectionProps) => p.fullwidth ? "20px 0 100px" : "20px 30px 100px"};
+  padding-bottom: ${(p: SectionProps) => p.lastItem ? "0 !important" : null};
   box-sizing: border-box;
-  padding: 10px 20px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  background: ${(p: SectionProps) => p.dark ? colours.dark : colours.light};
-  color: ${(p: SectionProps) => p.dark ? colours.light : colours.dark};
+  justify-content: center;
+  margin-top: ${(p: SectionProps) => p.topSpace ? "70px" : null};
 
-  h1 {
-    font-size: 3em;
-    font-weight: 200;
-    margin-top: 100px;
+  div.wrapper {
+    width: 96%;
+    max-width: ${SharedSettings.maxWidth};
+    display: flex;
+    flex-wrap: wrap;
   }
 
-  p {
-      font-size: 1.8em;
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 20px 0 50px;
   }
 `;
