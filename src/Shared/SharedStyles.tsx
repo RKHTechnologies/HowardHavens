@@ -62,7 +62,7 @@ export const Section = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  margin-top: ${(p: SectionProps) => p.topSpace ? "70px" : null};
+  padding-top: ${(p: SectionProps) => p.topSpace ? "100px" : null};
 
   div.wrapper {
     width: 96%;
@@ -72,6 +72,6 @@ export const Section = styled.div`
   }
 
   @media(max-width: ${SharedSettings.mobile}) {
-    padding: 20px 0 50px;
+    padding: 60px 0 50px;
   }
 `;

@@ -5,6 +5,7 @@ import { colours, Section } from '../Shared/SharedStyles';
 import Contact from '../Components/Contact';
 import FullScreenHero from '../Components/FullScreenHero';
 import About from '../Components/About';
+import WhyUs from '../Components/WhyUs';
 
 
 const SectionHeader = styled.h1`
@@ -31,13 +32,9 @@ const Home: React.FC = () => {
       <Section id="about" topSpace>
         <div className="wrapper">
           <About />
+          <WhyUs />
         </div>
       </Section>
-
-      {/*<Section dark>
-          <SectionHeader>What we do</SectionHeader>
-          Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
-      </Section> */}
 
       <Section id="contact" fullwidth lastItem>
         <Contact  />

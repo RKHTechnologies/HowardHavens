@@ -25,13 +25,14 @@ const Container = styled.div`
   padding: 50px;
   overflow: hidden;
   box-sizing: border-box;
+  margin-top: 60px;
 `;
 
 const MainHeader = styled.h1`
   text-transform: uppercase;
   letter-spacing: 7px;
   font-weight: 400;
-  color: ${colours.dark};
+  color: ${colours.light};
   font-size: 2.5em;
   font-weight: 600;
   margin-top: 20px;
