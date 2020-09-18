@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     const [stickyHeader, setStickyHeader] = useState(false);
     
     window.addEventListener("scroll", () => {
-        window.pageYOffset > window.innerHeight ? setStickyHeader(true) : setStickyHeader(false);
+        window.pageYOffset > window.innerHeight -10 ? setStickyHeader(true) : setStickyHeader(false);
     });
 
     return (
@@ -33,6 +33,12 @@ const Home: React.FC = () => {
         <div className="wrapper">
           <About />
           <WhyUs />
+        </div>
+      </Section>
+
+      <Section id="about">
+        <div className="wrapper">
+          
         </div>
       </Section>
 

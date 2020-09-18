@@ -67,7 +67,7 @@ export const Title = styled.h2`
   width: 85%;
   margin-top: 21px;
   margin-bottom: 0;
-  color: ${colours.light};
+  color: ${colours.dark};
   font-weight: 500;
 `;
 
@@ -88,22 +88,22 @@ const WhyUs: FC = () => {
       <Grid>
         <GridItem>
           <Icon icon={faCalendarCheck} size="2x" />
-          <Title>Programs to fit your schedule</Title>
+          <Title>Family Run</Title>
         </GridItem>
         
         <GridItem>
-          <Icon icon={faHeartbeat} size="2x" />
-          <Title>Focus on Health and Wellbeing</Title>
+          <Icon icon={faPeopleArrows} size="2x" />
+          <Title>1-2-1 Dedicated Customer Service</Title>
         </GridItem>
 
         <GridItem>
           <Icon icon={faBalanceScaleRight} size="2x" />
-          <Title>Growth and Progression Tracking</Title>
+          <Title>Friendly yet professional</Title>
         </GridItem>
 
         <GridItem>
-          <Icon icon={faPeopleArrows} size="2x" />
-          <Title>1-2-1 Coaching Available</Title>
+          <Icon icon={faHeartbeat} size="2x" />
+          <Title>We take care of </Title>
         </GridItem>
 
         <GridItem>

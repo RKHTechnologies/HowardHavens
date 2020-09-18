@@ -8,8 +8,8 @@ const GlobalStyle = createGlobalStyle`
     
     html {
         scroll-behavior: smooth;
-        background: #000;
-        color: #fff;
+        /* background: #000; */
+        /* color: #fff; */
     }
 
     ::-webkit-scrollbar {

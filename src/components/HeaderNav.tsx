@@ -20,11 +20,11 @@ const HeaderBar = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background: ${colours.dark}b0;
+    background: ${colours.light}b0;
     z-index: 2;
 
     @media(max-width: ${SharedSettings.mobile}) {
-      background: ${colours.dark};
+      background: ${colours.light};
     }
 `;
 
@@ -61,7 +61,7 @@ const Logo = styled.img`
 const HeaderButton = styled.a`
     height: 100%;
     background: transparent;
-    color: ${colours.light};
+    color: ${colours.dark};
     border: none;
     letter-spacing: 5px;
     text-indent: 5px;
@@ -87,20 +87,22 @@ const NavItemsRightContainer = styled.div`
     @media( max-width: 1100px ) {
         flex-direction: column;
         align-self: flex-start;
-        /* margin-top: 70px; */
         height: ${(p:menuProps) => p.menuOpen ? "80vh" : "0"};
+        
         position: fixed;
-        top: 0;
+        top: 80px;
         left: 20px;
         right: 20px;
-        background: ${colours.dark};
+        background: ${colours.lightGrey};
         z-index: 3;
 
         ${HeaderButton} {
-            text-align: center;
-            border-radius: 0;
             color: ${colours.light};
+            text-align: center;
+            font-size: 1.4em;
             padding: 0 14px;
+            
+            border-radius: 0;           
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,12 +110,6 @@ const NavItemsRightContainer = styled.div`
             &:last-child {
                 margin-right: 0;
             }
-            /* display: initial;
-            margin-right: 20px;
-            text-align: right;
-            border-radius: 0;
-            background: #1f1f1f;
-            padding: 0 25px; */
         }
     }
 
@@ -126,7 +122,7 @@ const NavItemsRightContainer = styled.div`
 const Burger = styled.div`
     height: 5px;
     width: 40px;
-    background: ${(p: menuProps) => p.menuOpen ? colours.primary : colours.light};
+    background: ${(p: menuProps) => p.menuOpen ? colours.primary : colours.primary};
     transition: all 0.5s ease;
     transition-property: height, width, transform;
     position: absolute;
@@ -159,9 +155,9 @@ const Burger = styled.div`
 
 
 const BurgerContainer = styled.div`
-    height: 70px;
+    height: 80px;
     width: 100px;
-    background: ${(p: menuProps) => p.menuOpen ? "#1f1f1f" : "transparent"};
+    background: ${(p: menuProps) => p.menuOpen ? colours.lightGrey : "transparent"};
     position: relative;
     align-self: flex-end;
     cursor: pointer;
@@ -170,13 +166,12 @@ const BurgerContainer = styled.div`
     right: 20px;
     display: none;
 
-    &:hover > ${Burger} {
-        background: ${colours.primary};
-    }
-
     @media( max-width: 1100px ) {
         display: initial;
+    }
 
+    @media( max-width: 350px ) {
+        right: 5px;
     }
 `;
 
@@ -191,21 +186,22 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
 
     const handleNav = (link: string): void => {
         console.log("clicked nav", link);
+        setMenuOpen(false);
         history.push(`${process.env.PUBLIC_URL}${link}`);
     }
 
     return (
       <HeaderBar stickyHeader={stickyHeader}>
         <HeaderNavContainer>
-          <Logo src={ImagesDesktop['logoWhite']} alt="Howard Havens Logo" onClick={() => handleNav("")} />
-          <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
+          <Logo src={ImagesDesktop['logo']} alt="Howard Havens Logo" onClick={() => handleNav("")} />
+          <BurgerContainer menuOpen={menuOpen} onClick={() => stickyHeader && setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
 
           <NavItemsRightContainer menuOpen={menuOpen}>  
-            <HeaderButton href="#about">ABOUT US</HeaderButton>
-            <HeaderButton href="#lettings">LETTINGS</HeaderButton>
-            <HeaderButton href="#dealsourcing">DEAL SOURCING</HeaderButton>
-            <HeaderButton href="#projects">PROJECTS</HeaderButton>
-            <HeaderButton href="#contact">CONTACT</HeaderButton>
+            <HeaderButton href="#about" onClick={() => setMenuOpen(false)}>ABOUT US</HeaderButton>
+            <HeaderButton href="#lettings" onClick={() => setMenuOpen(false)}>LETTINGS</HeaderButton>
+            <HeaderButton href="#dealsourcing" onClick={() => setMenuOpen(false)}>DEAL SOURCING</HeaderButton>
+            <HeaderButton href="#projects" onClick={() => setMenuOpen(false)}>PROJECTS</HeaderButton>
+            <HeaderButton href="#contact" onClick={() => setMenuOpen(false)}>CONTACT</HeaderButton>
             {/* <HeaderButton  href="#about" onClick={() => handleNav("#about")}>ABOUT US</HeaderButton> */}
             {/* <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton> */}
             {/* <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton> */}

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export type Colour = 'light' | 'dark' | 'primary' | 'darkGrey' | 'lightGrey';
+export type Colour = 'light' | 'dark' | 'primary' | 'darkGrey' | 'lightGrey' | 'green' | 'purple';
 
 interface ColoursProps {
     light: string,
@@ -8,6 +8,9 @@ interface ColoursProps {
     primary: string,
     darkGrey: string,
     lightGrey: string,
+
+    green: string,
+    purple: string,
 }
 
 export const colours: ColoursProps = {
@@ -16,6 +19,9 @@ export const colours: ColoursProps = {
     primary: "#E78200",
     darkGrey: "#707070",
     lightGrey: "#D2D2D2",
+
+    green: "#06D6A0",
+    purple: "#a09be7",
 }
 
 
