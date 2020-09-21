@@ -6,6 +6,7 @@ import Contact from '../Components/Contact';
 import FullScreenHero from '../Components/FullScreenHero';
 import About from '../Components/About';
 import WhyUs from '../Components/WhyUs';
+import Services from '../Components/Services';
 
 
 const SectionHeader = styled.h1`
@@ -36,10 +37,8 @@ const Home: React.FC = () => {
         </div>
       </Section>
 
-      <Section id="about">
-        <div className="wrapper">
-          
-        </div>
+      <Section id="services" fullwidth>
+        <Services />
       </Section>
 
       <Section id="contact" fullwidth lastItem>
