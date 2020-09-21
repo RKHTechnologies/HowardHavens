@@ -44,22 +44,20 @@ export const Grid = styled.div`
 
 export const GridItem = styled.div`
   display: grid;
-  grid-gap: 25px 0;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr;
   grid-template-areas: 
     'icon title'
     'icon description';
   position: relative;
 
   @media(max-width: ${SharedSettings.mobile}) {
-    grid-template-columns: 1fr 2fr;
+    /* grid-template-columns: 1fr 3fr; */
   }
 `;
 
 export const Icon = styled(FontAwesomeIcon)`
   grid-area: icon;
   height: 50px;
-  border-radius: 50%;
   margin: 7px 15px 0px;
   color: ${colours.primary};
   position: absolute;
