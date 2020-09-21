@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   width: 100%;
   text-align: center;
-  margin: 20px 0;
+  margin: 30px 0 20px;
   font-size: 1.2em;
 `;
 

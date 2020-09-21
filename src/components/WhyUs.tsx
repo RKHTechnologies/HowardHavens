@@ -16,6 +16,10 @@ const WhyUsSection = styled.div`
   flex-wrap: wrap;
   min-height: 200px;
   margin-bottom: 30px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 10px 0;
+  }
 `;
 
 export const PageHeading = styled.div`
@@ -89,31 +93,37 @@ const WhyUs: FC = () => {
         <GridItem>
           <Icon icon={faCalendarCheck} size="2x" />
           <Title>Family Run</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
         
         <GridItem>
           <Icon icon={faPeopleArrows} size="2x" />
           <Title>1-2-1 Dedicated Customer Service</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faBalanceScaleRight} size="2x" />
           <Title>Friendly yet professional</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faHeartbeat} size="2x" />
           <Title>We take care of </Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faBullseye} size="2x" />
           <Title>We'll help you smash your Targets</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faDumbbell} size="2x" />
           <Title>Focus your fitness around your needs</Title>
+          <Description>Above all we are happy to help make your move as seamless as possible</Description>
         </GridItem>
       </Grid>
     </WhyUsSection>

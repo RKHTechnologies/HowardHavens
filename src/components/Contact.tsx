@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { colours, Section } from "../Shared/SharedStyles";
+import { colours, Section, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHammer, faSearchLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,6 +26,10 @@ const Container = styled.div`
   overflow: hidden;
   box-sizing: border-box;
   margin-top: 60px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 10px;
+  }
 `;
 
 const MainHeader = styled.h1`
@@ -36,6 +40,10 @@ const MainHeader = styled.h1`
   font-size: 2.5em;
   font-weight: 600;
   margin-top: 20px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    font-size: 1.5em;
+  }
 `;
 
 const SubHeader = styled.div`
@@ -124,6 +132,7 @@ const Column = styled.div`
 
   @media(max-width: 1100px) {
     width: 100%;
+    padding: 0;
   }
 `;
 
@@ -152,12 +161,11 @@ const MultiLineForm = styled.textarea`
 const SubmitButton = styled.input`
   width: 300px;
   height: 50px;
-  /* border-radius: 30px; */
   border-radius: 5px;
-  border: 3px solid #000;
+  border: 2px solid #fff;
   background: transparent;
   letter-spacing: 6px;
-  color: #000;
+  color: #fff;
   font-size: 20px;
   line-height: 44px;
   font-weight: 600;
@@ -167,6 +175,11 @@ const SubmitButton = styled.input`
   &:hover {
     background: ${colours.dark};
     color: ${colours.primary};
+  }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    width: 100%;
+    margin-top: -10px;
   }
 `;
 

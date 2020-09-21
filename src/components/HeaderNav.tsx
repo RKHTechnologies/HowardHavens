@@ -190,11 +190,20 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
         history.push(`${process.env.PUBLIC_URL}${link}`);
     }
 
+    const burgerClick = (stickyHeader?: boolean) => {
+        if (!stickyHeader) {
+            window.scrollTo(0, window.innerHeight);
+            setTimeout(() => setMenuOpen(!menuOpen), 200);
+        }
+        else
+            setMenuOpen(!menuOpen);
+    };
+
     return (
       <HeaderBar stickyHeader={stickyHeader}>
         <HeaderNavContainer>
           <Logo src={ImagesDesktop['logo']} alt="Howard Havens Logo" onClick={() => handleNav("")} />
-          <BurgerContainer menuOpen={menuOpen} onClick={() => stickyHeader && setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
+          <BurgerContainer menuOpen={menuOpen} onClick={() => burgerClick(stickyHeader)}><Burger menuOpen={menuOpen} /></BurgerContainer>
 
           <NavItemsRightContainer menuOpen={menuOpen}>  
             <HeaderButton href="#about" onClick={() => setMenuOpen(false)}>ABOUT US</HeaderButton>

@@ -21,7 +21,7 @@ const Home: React.FC = () => {
     const [stickyHeader, setStickyHeader] = useState(false);
     
     window.addEventListener("scroll", () => {
-        window.pageYOffset > window.innerHeight -10 ? setStickyHeader(true) : setStickyHeader(false);
+        window.pageYOffset > window.innerHeight - 5 ? setStickyHeader(true) : setStickyHeader(false);
     });
 
     return (
