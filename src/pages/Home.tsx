@@ -37,8 +37,10 @@ const Home: React.FC = () => {
         </div>
       </Section>
 
-      <Section id="services" fullwidth>
-        <Services />
+      <Section id="services">
+        <div className="wrapper">
+          <Services />
+        </div>
       </Section>
 
       <Section id="contact" fullwidth lastItem>

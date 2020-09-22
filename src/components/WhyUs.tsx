@@ -78,6 +78,7 @@ export const Description = styled.p`
   width: 85%;
   margin-top: 5px;
   line-height: 24px;
+  color: ${colours.darkGrey};
 `;
 
 
