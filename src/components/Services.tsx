@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { ImagesDesktop } from '../Shared/ImageLib';
 import { colours } from '../Shared/SharedStyles';
+import checkIcon from '../img/Check_Icon.svg';
 
 const Container = styled.div`
   width: 100%;
@@ -39,6 +40,27 @@ const Title = styled.h1`
 
 const Description = styled.div``;
 
+const CheckList = styled.div`
+  margin-top: 20px;
+
+  li {
+    list-style: none;
+    margin-left: 30px;
+    margin-top: 25px;
+
+    &:before {
+      content: '';
+      width: 24px;
+      height: 24px;
+      background-image: url(${checkIcon});
+      background-size: contain;
+      position: absolute;
+      margin-top: -3px;
+      margin-left: -30px;
+    }
+  }
+`;
+
 const Services: FC = ()  => {
   return (
     <Container>
@@ -47,14 +69,14 @@ const Services: FC = ()  => {
         <Title>Thinking of Selling?</Title>
         <Description>
           We make the sales process simple and easy, taking care of everything for you.
-          <ul>
+        </Description>
+        <CheckList>
             <li>Cash Offers allow us to move extremely quickly</li>
             <li>We cover the costs of all solicitor fees</li>
             <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
             <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
             <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-          </ul>
-        </Description>
+          </CheckList>
       </Text>
     </Container>
   );
