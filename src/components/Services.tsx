@@ -4,12 +4,17 @@ import { ImagesDesktop } from '../Shared/ImageLib';
 import { colours } from '../Shared/SharedStyles';
 import checkIcon from '../img/Check_Icon.svg';
 
-const Container = styled.div`
+interface ServiceProps {
+  alt?: boolean;
+}
+
+const Service = styled.div`
   width: 100%;
   /* background: #e0e0e0; */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas: 'image text';
+  grid-template-areas: ${(p: ServiceProps) => p.alt ? "'text image'" : "'image text'"};
+  margin-bottom: 150px;
 `;
 
 const Image = styled.div`
@@ -21,14 +26,15 @@ const Image = styled.div`
   background-size: cover;
   background-position: center;
   text-align: right;
-  margin: auto 0 auto auto;
+  margin:  ${(p: ServiceProps) => p.alt ? "auto auto auto 0" : "auto 0 auto auto"};
 `;
 
 
 
 const Text = styled.div`
   grid-area: text;
-  padding-left: 20px;
+  padding: 0 20px;
+  text-align: ${(p: ServiceProps) => p.alt ? "right" : null};
 `;
 
 const Title = styled.h1`
@@ -42,11 +48,11 @@ const Description = styled.div``;
 
 const CheckList = styled.div`
   margin-top: 20px;
+  direction: ${(p: ServiceProps) => p.alt ? "rtl" : null};
 
   li {
     list-style: none;
-    margin-left: 30px;
-    margin-top: 25px;
+    margin: 25px 30px 0;
 
     &:before {
       content: '';
@@ -56,29 +62,83 @@ const CheckList = styled.div`
       background-size: contain;
       position: absolute;
       margin-top: -3px;
-      margin-left: -30px;
+      margin-left: ${(p: ServiceProps) => p.alt ? null : "-30px"};
+      margin-right: ${(p: ServiceProps) => p.alt ? "-30px" : null};
     }
   }
 `;
 
 const Services: FC = ()  => {
   return (
-    <Container>
-      <Image />
-      <Text>
-        <Title>Thinking of Selling?</Title>
-        <Description>
-          We make the sales process simple and easy, taking care of everything for you.
-        </Description>
-        <CheckList>
-            <li>Cash Offers allow us to move extremely quickly</li>
-            <li>We cover the costs of all solicitor fees</li>
-            <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-          </CheckList>
-      </Text>
-    </Container>
+    <>
+      <Service>
+        <Image />
+        <Text>
+          <Title>Thinking of Selling?</Title>
+          <Description>
+            We make the sales process simple and easy, taking care of everything for you.
+          </Description>
+          <CheckList>
+              <li>Cash Offers allow us to move extremely quickly</li>
+              <li>We cover the costs of all solicitor fees</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+            </CheckList>
+        </Text>
+      </Service>
+
+      <Service alt>
+        <Image alt />
+        <Text alt>
+          <Title>Thinking of Selling?</Title>
+          <Description>
+            We make the sales process simple and easy, taking care of everything for you.
+          </Description>
+          <CheckList alt>
+              <li>Cash Offers allow us to move extremely quickly</li>
+              <li>We cover the costs of all solicitor fees</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+            </CheckList>
+        </Text>
+      </Service>
+
+      <Service>
+        <Image />
+        <Text>
+          <Title>Thinking of Selling?</Title>
+          <Description>
+            We make the sales process simple and easy, taking care of everything for you.
+          </Description>
+          <CheckList>
+              <li>Cash Offers allow us to move extremely quickly</li>
+              <li>We cover the costs of all solicitor fees</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+            </CheckList>
+        </Text>
+      </Service>
+
+      <Service alt>
+        <Image alt />
+        <Text alt>
+          <Title>Thinking of Selling?</Title>
+          <Description>
+            We make the sales process simple and easy, taking care of everything for you.
+          </Description>
+          <CheckList alt>
+              <li>Cash Offers allow us to move extremely quickly</li>
+              <li>We cover the costs of all solicitor fees</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+            </CheckList>
+        </Text>
+      </Service>
+    </>
   );
 }
 
