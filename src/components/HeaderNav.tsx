@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import { useHistory } from 'react-router-dom';
@@ -15,17 +15,15 @@ interface menuProps {
 const HeaderBar = styled.div`
     position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
     top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
+    box-shadow: ${(p: IProps) => p.stickyHeader ? "0 0.25rem 0.125rem 0 rgba(0,0,0,0.025)" : null};
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: ${colours.light}b0;
+    background: ${colours.light};
     z-index: 2;
-
-    @media(max-width: ${SharedSettings.mobile}) {
-      background: ${colours.light};
-    }
+    transition: box-shadow 0.6s ease;
 `;
 
 const HeaderNavContainer = styled.div`
@@ -182,13 +180,16 @@ interface IProps {
 const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
     
-    const history = useHistory();
-
     const handleNav = (link: string): void => {
-        console.log("clicked nav", link);
         setMenuOpen(false);
-        history.push(`${process.env.PUBLIC_URL}${link}`);
+        let scrollPosition = document.getElementById(`${link}`)?.offsetTop ?? 0;
+
+        if (link !== "about" && link !== "contact")
+            scrollPosition = scrollPosition - 100;
+        
+        window.scrollTo(0, scrollPosition);
     }
+
 
     const burgerClick = (stickyHeader?: boolean) => {
         if (!stickyHeader) {
@@ -206,16 +207,12 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
           <BurgerContainer menuOpen={menuOpen} onClick={() => burgerClick(stickyHeader)}><Burger menuOpen={menuOpen} /></BurgerContainer>
 
           <NavItemsRightContainer menuOpen={menuOpen}>  
-            <HeaderButton href="#about" onClick={() => setMenuOpen(false)}>ABOUT US</HeaderButton>
-            <HeaderButton href="#lettings" onClick={() => setMenuOpen(false)}>LETTINGS</HeaderButton>
-            <HeaderButton href="#dealsourcing" onClick={() => setMenuOpen(false)}>DEAL SOURCING</HeaderButton>
-            <HeaderButton href="#projects" onClick={() => setMenuOpen(false)}>PROJECTS</HeaderButton>
-            <HeaderButton href="#contact" onClick={() => setMenuOpen(false)}>CONTACT</HeaderButton>
-            {/* <HeaderButton  href="#about" onClick={() => handleNav("#about")}>ABOUT US</HeaderButton> */}
-            {/* <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton> */}
-            {/* <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton> */}
-            {/* <HeaderButton onClick={() => handleNav("projects")}>PROJECTS</HeaderButton> */}
-            {/* <HeaderButton onClick={() => handleNav("contact")}>CONTACT</HeaderButton> */}
+            <HeaderButton onClick={() => handleNav("about")}>ABOUT US</HeaderButton>
+            <HeaderButton onClick={() => handleNav("sales")}>SALES</HeaderButton>
+            <HeaderButton onClick={() => handleNav("discuss")}>1-2-1 DISCUSSION</HeaderButton>
+            <HeaderButton onClick={() => handleNav("tenantbuyers")}>TENANT BUYERS</HeaderButton>
+            <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton>
+            <HeaderButton onClick={() => handleNav("contact")}>CONTACT</HeaderButton>
           </NavItemsRightContainer>
         </HeaderNavContainer>
       </HeaderBar>

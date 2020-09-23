@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { ImagesDesktop } from '../Shared/ImageLib';
-import { colours } from '../Shared/SharedStyles';
+import { colours, SharedSettings } from '../Shared/SharedStyles';
 import checkIcon from '../img/Check_Icon.svg';
 
 const Container = styled.div`
@@ -27,7 +27,14 @@ const Service = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: ${(p: ServiceProps) => p.alt ? "'text image'" : "'image text'"};
-  margin-bottom: 150px;
+  margin: 50px 0 100px;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'text'
+      'image';
+  }
 `;
 
 const Image = styled.div`
@@ -40,6 +47,13 @@ const Image = styled.div`
   background-position: center;
   text-align: right;
   margin:  ${(p: ServiceProps) => p.alt ? "auto auto auto 0" : "auto 0 auto auto"};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    margin: auto;
+    margin-top: 10px;
+    width: 100%;
+    height: 250px;
+  }
 `;
 
 
@@ -48,6 +62,11 @@ const Text = styled.div`
   grid-area: text;
   padding: 0 20px;
   text-align: ${(p: ServiceProps) => p.alt ? "right" : null};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    padding: 0 10px;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -55,13 +74,16 @@ const Title = styled.h1`
   margin-top: 0;
   font-size: 2.5em;
   color: ${colours.primary};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    font-size: 2em;
+  }
 `;
 
 const Description = styled.div``;
 
 const CheckList = styled.div`
   margin-top: 20px;
-  direction: ${(p: ServiceProps) => p.alt ? "rtl" : null};
 
   li {
     list-style: none;
@@ -75,17 +97,23 @@ const CheckList = styled.div`
       background-size: contain;
       position: absolute;
       margin-top: -3px;
-      margin-left: ${(p: ServiceProps) => p.alt ? null : "-30px"};
-      margin-right: ${(p: ServiceProps) => p.alt ? "-30px" : null};
+      margin-left: -30px;
     }
+  }
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    margin-left: 15px;
+    text-align: left;
   }
 `;
 
 const Services: FC = ()  => {
+
   return (
     <Container>
+
       <Strip>
-        <Service>
+        <Service id="sales">
           <Image />
           <Text>
             <Title>Thinking of Selling?</Title>
@@ -103,7 +131,7 @@ const Services: FC = ()  => {
         </Service>
       </Strip>
 
-      <Strip alt>
+      <Strip alt id="discuss">
         <Service alt>
           <Image alt />
           <Text alt>
@@ -115,7 +143,7 @@ const Services: FC = ()  => {
         </Service>
       </Strip>
 
-      <Strip>
+      <Strip id="tenantbuyers">
         <Service>
           <Image />
           <Text>
@@ -134,7 +162,7 @@ const Services: FC = ()  => {
         </Service>
       </Strip>
 
-      <Strip alt>
+      <Strip alt id="dealsourcing">
         <Service alt>
           <Image alt />
           <Text alt>
@@ -142,7 +170,7 @@ const Services: FC = ()  => {
             <Description>
               Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
             </Description>
-            <CheckList alt>
+            <CheckList>
                 <li>Cash Offers allow us to move extremely quickly</li>
                 <li>We cover the costs of all solicitor fees</li>
                 <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
