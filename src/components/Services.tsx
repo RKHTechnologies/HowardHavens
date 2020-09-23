@@ -4,13 +4,26 @@ import { ImagesDesktop } from '../Shared/ImageLib';
 import { colours } from '../Shared/SharedStyles';
 import checkIcon from '../img/Check_Icon.svg';
 
+const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const Strip = styled.div`
+  width: 100%;
+  background:  ${(p: ServiceProps) => p.alt ? "#f5f5f5" : null};
+`;
+
 interface ServiceProps {
   alt?: boolean;
 }
 
 const Service = styled.div`
   width: 100%;
-  /* background: #e0e0e0; */
+  max-width: 1800px;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: ${(p: ServiceProps) => p.alt ? "'text image'" : "'image text'"};
@@ -70,68 +83,76 @@ const CheckList = styled.div`
 
 const Services: FC = ()  => {
   return (
-    <>
-      <Service>
-        <Image />
-        <Text>
-          <Title>Thinking of Selling?</Title>
-          <Description>
-            We make the sales process simple and easy, taking care of everything for you.
-          </Description>
-          <CheckList>
-              <li>Cash Offers allow us to move extremely quickly</li>
-              <li>We cover the costs of all solicitor fees</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            </CheckList>
-        </Text>
-      </Service>
+    <Container>
+      <Strip>
+        <Service>
+          <Image />
+          <Text>
+            <Title>Thinking of Selling?</Title>
+            <Description>
+              We make the sales process simple and easy, taking care of everything for you.
+            </Description>
+            <CheckList>
+                <li>Cash Offers allow us to move extremely quickly</li>
+                <li>We cover the costs of all solicitor fees</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              </CheckList>
+          </Text>
+        </Service>
+      </Strip>
 
-      <Service alt>
-        <Image alt />
-        <Text alt>
-          <Title>Want someone to talk through your options?</Title>
-          <Description>
-            We make the sales process simple and easy, taking care of everything for you.
-          </Description>
-        </Text>
-      </Service>
+      <Strip alt>
+        <Service alt>
+          <Image alt />
+          <Text alt>
+            <Title>Want someone to talk through your options?</Title>
+            <Description>
+              We make the sales process simple and easy, taking care of everything for you.
+            </Description>
+          </Text>
+        </Service>
+      </Strip>
 
-      <Service>
-        <Image />
-        <Text>
-          <Title>Love to own your own home, but struggling with the deposit?</Title>
-          <Description>
-            We make the sales process simple and easy, taking care of everything for you.
-          </Description>
-          <CheckList>
-              <li>Cash Offers allow us to move extremely quickly</li>
-              <li>We cover the costs of all solicitor fees</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            </CheckList>
-        </Text>
-      </Service>
+      <Strip>
+        <Service>
+          <Image />
+          <Text>
+            <Title>Love to own your own home, but struggling with the deposit?</Title>
+            <Description>
+              We make the sales process simple and easy, taking care of everything for you.
+            </Description>
+            <CheckList>
+                <li>Cash Offers allow us to move extremely quickly</li>
+                <li>We cover the costs of all solicitor fees</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              </CheckList>
+          </Text>
+        </Service>
+      </Strip>
 
-      <Service alt>
-        <Image alt />
-        <Text alt>
-          <Title>Struggling to find great deals?</Title>
-          <Description>
-            Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
-          </Description>
-          <CheckList alt>
-              <li>Cash Offers allow us to move extremely quickly</li>
-              <li>We cover the costs of all solicitor fees</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            </CheckList>
-        </Text>
-      </Service>
-    </>
+      <Strip alt>
+        <Service alt>
+          <Image alt />
+          <Text alt>
+            <Title>Struggling to find great deals?</Title>
+            <Description>
+              Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
+            </Description>
+            <CheckList alt>
+                <li>Cash Offers allow us to move extremely quickly</li>
+                <li>We cover the costs of all solicitor fees</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+              </CheckList>
+          </Text>
+        </Service>
+      </Strip>
+    </Container>
   );
 }
 
