@@ -91,24 +91,17 @@ const Services: FC = ()  => {
       <Service alt>
         <Image alt />
         <Text alt>
-          <Title>Thinking of Selling?</Title>
+          <Title>Want someone to talk through your options?</Title>
           <Description>
             We make the sales process simple and easy, taking care of everything for you.
           </Description>
-          <CheckList alt>
-              <li>Cash Offers allow us to move extremely quickly</li>
-              <li>We cover the costs of all solicitor fees</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-            </CheckList>
         </Text>
       </Service>
 
       <Service>
         <Image />
         <Text>
-          <Title>Thinking of Selling?</Title>
+          <Title>Love to own your own home, but struggling with the deposit?</Title>
           <Description>
             We make the sales process simple and easy, taking care of everything for you.
           </Description>
@@ -125,9 +118,9 @@ const Services: FC = ()  => {
       <Service alt>
         <Image alt />
         <Text alt>
-          <Title>Thinking of Selling?</Title>
+          <Title>Struggling to find great deals?</Title>
           <Description>
-            We make the sales process simple and easy, taking care of everything for you.
+            Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
           </Description>
           <CheckList alt>
               <li>Cash Offers allow us to move extremely quickly</li>
