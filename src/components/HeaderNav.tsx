@@ -84,13 +84,14 @@ const NavItemsRightContainer = styled.div`
     @media( max-width: 1100px ) {
         flex-direction: column;
         align-self: flex-start;
-        height: ${(p:menuProps) => p.menuOpen ? "80vh" : "0"};
+        height: ${(p:menuProps) => p.menuOpen ? "88vh" : "0"};
+        box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.25);
         
         position: fixed;
         top: 80px;
         left: 20px;
         right: 20px;
-        background: ${colours.lightGrey};
+        background: ${colours.primary};
         z-index: 3;
 
         ${HeaderButton} {
@@ -119,7 +120,7 @@ const NavItemsRightContainer = styled.div`
 const Burger = styled.div`
     height: 5px;
     width: 40px;
-    background: ${(p: menuProps) => p.menuOpen ? colours.primary : colours.primary};
+    background: ${(p: menuProps) => p.menuOpen ? colours.light : colours.primary};
     transition: all 0.5s ease;
     transition-property: height, width, transform;
     position: absolute;
@@ -133,7 +134,7 @@ const Burger = styled.div`
         position: absolute;
         height: 5px;
         width: 40px;
-        background: ${(p: menuProps) => p.menuOpen ? colours.primary : "inherit"};
+        background: ${(p: menuProps) => p.menuOpen ? colours.light : "inherit"};
         transition: transform 0.5s ease, opacity 0.5s ease;
         border-radius: 4px;
     }
@@ -154,7 +155,7 @@ const Burger = styled.div`
 const BurgerContainer = styled.div`
     height: 80px;
     width: 100px;
-    background: ${(p: menuProps) => p.menuOpen ? colours.lightGrey : "transparent"};
+    background: ${(p: menuProps) => p.menuOpen ? colours.primary : "transparent"};
     position: relative;
     align-self: flex-end;
     cursor: pointer;
