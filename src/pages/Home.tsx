@@ -41,7 +41,7 @@ const Home: React.FC = () => {
         <Services />
       </Section>
 
-      <Section id="contact" fullwidth lastItem>
+      <Section fullwidth lastItem>
         <Contact  />
       </Section>
     </>

@@ -112,8 +112,8 @@ const Services: FC = ()  => {
   return (
     <Container>
 
-      <Strip>
-        <Service id="sales">
+      <Strip id="sales">
+        <Service>
           <Image />
           <Text>
             <Title>Thinking of Selling?</Title>
@@ -166,7 +166,7 @@ const Services: FC = ()  => {
         <Service alt>
           <Image alt />
           <Text alt>
-            <Title>Struggling to find great deals?</Title>
+            <Title>Like to be sent great deals?</Title>
             <Description>
               Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
             </Description>

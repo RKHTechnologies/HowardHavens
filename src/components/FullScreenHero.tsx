@@ -89,9 +89,19 @@ const ScrollArrow = styled.a`
     bottom: 10px;
     left: calc(50% - 40px);
     animation: ${bounce} 1s infinite;
+    cursor: pointer;
 `;
 
 const FullScreenHero: FC = () => {
+  const handleNav = (link: string): void => {
+    let scrollPosition = document.getElementById(`${link}`)?.offsetTop ?? 0;
+
+    if (link !== "about")
+        scrollPosition = scrollPosition - 100;
+    
+    window.scrollTo(0, scrollPosition);
+  }
+
   return (
     <>
        <LandingSection>
@@ -101,7 +111,7 @@ const FullScreenHero: FC = () => {
                 <div>HOWARD</div>
                 <div>HAVENS</div>
             </MainText>
-            <ScrollArrow href="#about"/>
+            <ScrollArrow onClick={() => handleNav("about")} />
         </LandingSection>
     </>
   );

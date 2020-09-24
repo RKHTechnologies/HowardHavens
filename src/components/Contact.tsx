@@ -219,7 +219,7 @@ const Contact: React.FC = () => {
   }
 
   return (
-    <Container background={colours.primary}>
+    <Container background={colours.primary} id="contact">
       <MainHeader>Contact Us</MainHeader>
       <SubHeader>Please get in touch <span>today</span> if you have any questions, are interested in any of our <span>services</span> - or are looking for <span>hassle free solutions</span> to your property needs!</SubHeader>
 

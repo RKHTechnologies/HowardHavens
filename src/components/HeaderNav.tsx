@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
-import { useHistory } from 'react-router-dom';
 import { ImagesDesktop } from '../Shared/ImageLib';
 
 interface IProps {
@@ -183,10 +182,13 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     const handleNav = (link: string): void => {
         setMenuOpen(false);
         let scrollPosition = document.getElementById(`${link}`)?.offsetTop ?? 0;
-
-        if (link !== "about" && link !== "contact")
-            scrollPosition = scrollPosition - 100;
         
+        if (link !== "about" && link !== "contact")
+            scrollPosition = scrollPosition - (window.innerWidth > 1100 ? 80 : 40);
+        
+        if (link === "contact")
+        scrollPosition = scrollPosition - (window.innerWidth > 1100 ? 80 : 70);
+
         window.scrollTo(0, scrollPosition);
     }
 
