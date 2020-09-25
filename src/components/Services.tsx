@@ -137,7 +137,7 @@ const Services: FC = ()  => {
           <Text alt>
             <Title>Want someone to talk through your options?</Title>
             <Description>
-              We make the sales process simple and easy, taking care of everything for you.
+              We understand there are lots of different 
             </Description>
           </Text>
         </Service>
@@ -147,15 +147,17 @@ const Services: FC = ()  => {
         <Service>
           <Image />
           <Text>
-            <Title>Love to own your own home, but struggling with the deposit?</Title>
+            <Title>Why be a tenant, when you can be a tenant buyer?</Title>
             <Description>
-              We make the sales process simple and easy, taking care of everything for you.
+              Our Rent to Buy or 'Tenant Buyers' program gives you the option to purchase a property at an agreed price within an agreed timescale. 
+              <br /><br />
+              During this period you have the benefits of being a traditional homeowner, improving the property as your please - whilst living in the property as a tenant until we complete the purchase.
             </Description>
             <CheckList>
-                <li>Cash Offers allow us to move extremely quickly</li>
-                <li>We cover the costs of all solicitor fees</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>No mortgage required to get started</li>
+                <li>If the property value goes up, you keep it - the price doesn't change</li>
+                <li>You can move in almost immediately (no mortgage application)</li>
+                <li>You're free to make the property your own</li>
                 <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
               </CheckList>
           </Text>
