@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { ImagesDesktop } from '../Shared/ImageLib';
+import { imageLib, ImagesDesktop } from '../Shared/ImageLib';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import checkIcon from '../img/Check_Icon.svg';
 
@@ -37,16 +37,21 @@ const Service = styled.div`
   }
 `;
 
+interface ImageProps {
+  image: imageLib;
+  alt?: boolean;
+}
+
 const Image = styled.div`
   grid-area: image;
   width: 80%;
   height: 400px;
   background: lightgrey;
-  background-image: url(${ImagesDesktop["house1"]});
+  background-image: url(${(p: ImageProps) => ImagesDesktop[p.image]});
   background-size: cover;
   background-position: center;
   text-align: right;
-  margin:  ${(p: ServiceProps) => p.alt ? "auto auto auto 0" : "auto 0 auto auto"};
+  margin:  ${(p: ImageProps) => p.alt ? "auto auto auto 0" : "auto 0 auto auto"};
 
   @media(max-width: ${SharedSettings.mobile}) {
     margin: auto;
@@ -114,7 +119,7 @@ const Services: FC = ()  => {
 
       <Strip id="sales">
         <Service>
-          <Image />
+          <Image image="house1" />
           <Text>
             <Title>Thinking of Selling?</Title>
             <Description>
@@ -133,7 +138,7 @@ const Services: FC = ()  => {
 
       <Strip alt id="discuss">
         <Service alt>
-          <Image alt />
+          <Image image="talkThrough" alt />
           <Text alt>
             <Title>Want someone to talk through your options?</Title>
             <Description>
@@ -145,7 +150,7 @@ const Services: FC = ()  => {
 
       <Strip id="tenantbuyers">
         <Service>
-          <Image />
+          <Image image="house1" />
           <Text>
             <Title>Love to own your own home, but struggling with the deposit?</Title>
             <Description>
@@ -164,19 +169,12 @@ const Services: FC = ()  => {
 
       <Strip alt id="dealsourcing">
         <Service alt>
-          <Image alt />
+          <Image image="house1" alt />
           <Text alt>
             <Title>Like to be sent great deals?</Title>
             <Description>
               Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
             </Description>
-            <CheckList>
-                <li>Cash Offers allow us to move extremely quickly</li>
-                <li>We cover the costs of all solicitor fees</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-              </CheckList>
           </Text>
         </Service>
       </Strip>
