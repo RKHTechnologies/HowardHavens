@@ -45,7 +45,7 @@ interface ImageProps {
 const Image = styled.div`
   grid-area: image;
   width: 80%;
-  height: 400px;
+  height: 500px;
   background: lightgrey;
   background-image: url(${(p: ImageProps) => ImagesDesktop[p.image]});
   background-size: cover;
@@ -152,18 +152,19 @@ const Services: FC = ()  => {
         <Service>
           <Image image="house1" />
           <Text>
-            <Title>Why be a tenant, when you can be a tenant buyer?</Title>
+            <Title>Why rent, when you can be a tenant buyer?</Title>
             <Description>
-              Our Rent to Buy or 'Tenant Buyers' program gives you the option to purchase a property at an agreed price within an agreed timescale. 
+              Our Rent to Buy or 'Tenant Buyers' program gives you the ability to get on the property ladder with a much smaller deposit. You'll live in your new home as a tenant until we complete the purchase.
               <br /><br />
-              During this period you have the benefits of being a traditional homeowner, improving the property as your please - whilst living in the property as a tenant until we complete the purchase.
+              During this period you have the benefits of being a traditional homeowner, maintaining the property as your please - whilst paying a 'top up' above the rent, which in time, covers your deposit!
             </Description>
             <CheckList>
                 <li>No mortgage required to get started</li>
                 <li>If the property value goes up, you keep it - the price doesn't change</li>
                 <li>You can move in almost immediately (no mortgage application)</li>
+                <li>Live in your home, whilst you improve your credit rating</li>
                 <li>You're free to make the property your own</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                
               </CheckList>
           </Text>
         </Service>
