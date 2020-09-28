@@ -11,6 +11,9 @@ const Container = styled.div`
 const About: FC = () => {
   return (
     <Container>
+      
+
+
       Howard Havens is your local family owned and run property company.   ... modern take ... places the customer at the heart ... customers are both the clients that we work with as well as the tennants within the property ... with years of property experience 
       {/* Want to be a good port of call for potential clients on HMO letters. Also for potential investors. */}
 

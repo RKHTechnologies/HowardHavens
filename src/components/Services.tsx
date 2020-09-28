@@ -179,7 +179,7 @@ const Services: FC = ()  => {
             <Description>
               Our Rent to Buy or 'Tenant Buyers' program gives you the ability to get on the property ladder with a much smaller deposit. You'll live in your new home as a tenant until we complete the purchase.
               <br /><br />
-              During this period you have the benefits of being a traditional homeowner, maintaining the property as your please - whilst getting the peace of mind that comes with living in your own home.
+              During this period you have the benefits of being a traditional homeowner, maintaining the property as you please - whilst getting the peace of mind that comes with living in your own home.
             </Description>
             <CheckList>
               <li>No mortgage required to get started</li>
