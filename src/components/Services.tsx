@@ -112,7 +112,30 @@ const CheckList = styled.div`
   }
 `;
 
+const Button = styled.button`
+  padding: 6px 18px;
+  border-radius: 3px;
+  color: ${colours.light};
+  background: ${colours.green};
+  margin-top: 22px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: ${colours.green}c7;
+  }
+`;
+
 const Services: FC = ()  => {
+
+  const handleClick = () => {
+    window.open(
+      `mailto:Contact@howardhavens.co.uk
+        ?subject=Tenant Buyer`, 
+        '_blank'
+    );
+  }
 
   return (
     <Container>
@@ -156,16 +179,16 @@ const Services: FC = ()  => {
             <Description>
               Our Rent to Buy or 'Tenant Buyers' program gives you the ability to get on the property ladder with a much smaller deposit. You'll live in your new home as a tenant until we complete the purchase.
               <br /><br />
-              During this period you have the benefits of being a traditional homeowner, maintaining the property as your please - whilst paying a 'top up' above the rent, which in time, covers your deposit!
+              During this period you have the benefits of being a traditional homeowner, maintaining the property as your please - whilst getting the peace of mind that comes with living in your own home.
             </Description>
             <CheckList>
-                <li>No mortgage required to get started</li>
-                <li>If the property value goes up, you keep it - the price doesn't change</li>
-                <li>You can move in almost immediately (no mortgage application)</li>
-                <li>Live in your home, whilst you improve your credit rating</li>
-                <li>You're free to make the property your own</li>
-                
-              </CheckList>
+              <li>No mortgage required to get started</li>
+              <li>If the property value goes up, you keep the difference</li>
+              <li>You can move in almost immediately (no mortgage application)</li>
+              <li>Live in your home, whilst you improve your credit rating</li>
+              <li>You're free to make the property your own</li>
+            </CheckList>
+            <Button onClick={handleClick}>Contact us to find out more</Button>
           </Text>
         </Service>
       </Strip>
