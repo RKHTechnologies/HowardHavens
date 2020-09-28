@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import { colours, SharedSettings } from '../Shared/SharedStyles';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeartbeat, faCalendarCheck, faBalanceScaleRight, faBullseye, faDumbbell, faPeopleArrows, faTachometerAlt, faClipboardList, faFighterJet, faClipboardCheck, faBalanceScale } from "@fortawesome/free-solid-svg-icons";
+import { faHeartbeat, faPeopleArrows, faFighterJet, faClipboardCheck, faBalanceScale, faPalette } from "@fortawesome/free-solid-svg-icons";
 
 const WhyUsSection = styled.div`
   min-height: 400px;
@@ -92,12 +92,12 @@ const WhyUs: FC = () => {
         <GridItem>
           <Icon icon={faFighterJet} size="2x" />
           <Title>Fast, Reliable Results</Title>
-          <Description>We get fast results with no banks, credit checks or chains.</Description>
+          <Description>We get fast results with no banks, long credit checks or chains</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faClipboardCheck} size="2x" />
-          <Title>Tailor made solutions</Title>
+          <Title>Tailor Made Solutions</Title>
           <Description>We understand everyone's situation is completely different, and tailor make each solution for you and your circumstances</Description>
         </GridItem>
 
@@ -108,21 +108,21 @@ const WhyUs: FC = () => {
         </GridItem>
         
         <GridItem>
-          <Icon icon={faCalendarCheck} size="2x" />
-          <Title>Family Run</Title>
-          <Description>Above all we are happy to help make your move as seamless as possible</Description>
+          <Icon icon={faHeartbeat} size="2x" />
+          <Title>Family Run, Relationship Driven</Title>
+          <Description>As a family run organisation we understand the value of strong relationships, and are proud to build those with our clients</Description>
         </GridItem>
 
         <GridItem>
-          <Icon icon={faHeartbeat} size="2x" />
-          <Title>We take care of </Title>
-          <Description></Description>
+          <Icon icon={faPalette} size="2x" />
+          <Title>Creative Solutions</Title>
+          <Description>Even if you've struggled to find a deal you're happy with in the past, our expert team will work to find the perfect solution for you</Description>
         </GridItem>
 
         <GridItem>
           <Icon icon={faBalanceScale} size="2x" />
-          <Title>Friendly yet professional</Title>
-          <Description></Description>
+          <Title>Proud to put our Clients First</Title>
+          <Description>We're available to discuss your unique situation, go through all your best options and advise you, with no obligation or charge</Description>
         </GridItem>
       </Grid>
     </WhyUsSection>

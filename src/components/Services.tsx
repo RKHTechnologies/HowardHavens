@@ -112,27 +112,37 @@ const CheckList = styled.div`
   }
 `;
 
+interface ButtonProps {
+  primary?: boolean;
+}
+
 const Button = styled.button`
   padding: 6px 18px;
   border-radius: 3px;
   color: ${colours.light};
-  background: ${colours.green};
+  background: ${(p: ButtonProps) => p.primary ? colours.primary : colours.green };
   margin-top: 22px;
   font-size: 1.2em;
   cursor: pointer;
   border: none;
 
   &:hover {
-    background: ${colours.green}c7;
+    background: ${(p: ButtonProps) => p.primary ? `${colours.primary}c7` : `${colours.green}c7` };
   }
+`;
+
+const Highlight = styled.span`
+  /* color: ${colours.primary}; */
+  color: #e26800;
+  /* font-weight: 500; */
 `;
 
 const Services: FC = ()  => {
 
-  const handleClick = () => {
+  const handleClick = (subject: string) => {
     window.open(
       `mailto:Contact@howardhavens.co.uk
-        ?subject=Tenant Buyer`, 
+        ?subject=${subject}`, 
         '_blank'
     );
   }
@@ -144,17 +154,22 @@ const Services: FC = ()  => {
         <Service>
           <Image image="house1" />
           <Text>
-            <Title>Thinking of Selling?</Title>
+            <Title>Need to sell quickly?</Title>
             <Description>
-              We make the sales process simple and easy, taking care of everything for you.
+              We make the sales process simple, easy and stress free, taking care of everything for you!
+              <br />
+              Due to our personal, creative and tailor made solutions, we can guarantee you a fast, reliable sale and help get you up to 100% of the market value.
             </Description>
             <CheckList>
                 <li>Cash Offers allow us to move extremely quickly</li>
                 <li>We cover the costs of all solicitor fees</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
-                <li>h dklsfhjklsd kflh dsklfhdsklghdsf</li>
+                <li>Any size or condition of property considered</li>
+                <li>Fed up of being a landlord, or become an accidental landlord?</li>
+                <li>Mortgage Arears, unmortgageable, or repossession concerns? We can help</li>
+                <li>Facing Divorce? We're here to resolve your property concerns</li>
+                <li>Had deals fall through? We follow through with our carefully considered offers</li>
               </CheckList>
+              <Button onClick={() => handleClick("Sales Enquiry")} >Contact Us Today</Button>
           </Text>
         </Service>
       </Strip>
@@ -165,8 +180,14 @@ const Services: FC = ()  => {
           <Text alt>
             <Title>Want someone to talk through your options?</Title>
             <Description>
-              We understand there are lots of different 
+              There are so many different options, avenues and <Highlight>opportunities</Highlight> out there when it comes to your property - <Highlight>we understand</Highlight> better than most how difficult the decision can be.
+              <br /><br />
+              Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your indivudual situation and the avenues available to you. 
+              We will be able to <Highlight>advise</Highlight> and recommend a <Highlight>great solution</Highlight> for you, with <Highlight>no obligations or charges</Highlight>.
+              <br /><br />
+              If at this point you decide you would like for us to help, our <Highlight>1-2-1 dedicated team member</Highlight> will guide you through the next steps, <Highlight>removing all hassle and stress!</Highlight>
             </Description>
+            <Button onClick={() => handleClick("Arrange a Consultation")} primary>Arrange a consultation</Button>
           </Text>
         </Service>
       </Strip>
@@ -188,7 +209,7 @@ const Services: FC = ()  => {
               <li>Live in your home, whilst you improve your credit rating</li>
               <li>You're free to make the property your own</li>
             </CheckList>
-            <Button onClick={handleClick}>Contact us to find out more</Button>
+            <Button onClick={() => handleClick("Tenant Buyers")}>Contact us to find out more</Button>
           </Text>
         </Service>
       </Strip>
@@ -197,10 +218,15 @@ const Services: FC = ()  => {
         <Service alt>
           <Image image="house1" alt />
           <Text alt>
-            <Title>Like to be sent great deals?</Title>
+            <Title>Investors, would you like to be receive great deals to your inbox?</Title>
             <Description>
-              Howard Havens also has our own Deal Sourcing mailing list, get in contact today to discuss.
+              At Howard Havens we have our own <Highlight>Deal Sourcing mailing list</Highlight>, so you can receive a <Highlight>personally tailored</Highlight> selection of our bespoke <Highlight>packaged deals</Highlight> deliverred to your virtual doorstep.
+              <br /><br />
+              Once you get in contact, we can look to establish what kind of property deal you are seeking; be it <Highlight>location, condition, price</Highlight> or which <Highlight>strategy</Highlight> you are specifically targeting.
+              <br />
+              We will then get you added into our <Highlight>exclusive mailing list</Highlight> to be one of the first to review <Highlight>fantastic opportunities</Highlight> for you and your business.
             </Description>
+            <Button onClick={() => handleClick("Deal Sourcincg")} primary>Don't miss out, Contact Now</Button>
           </Text>
         </Service>
       </Strip>
