@@ -132,9 +132,9 @@ const Button = styled.button`
 `;
 
 const Highlight = styled.span`
-  /* color: ${colours.primary}; */
-  color: #e26800;
-  /* font-weight: 500; */
+  color: ${colours.primary};
+  font-weight: 500;
+  font-style: italic;
 `;
 
 const Services: FC = ()  => {
@@ -142,7 +142,7 @@ const Services: FC = ()  => {
   const handleClick = (subject: string) => {
     window.open(
       `mailto:Contact@howardhavens.co.uk
-        ?subject=${subject}`, 
+        ?subject=${subject}`,
         '_blank'
     );
   }
@@ -182,10 +182,10 @@ const Services: FC = ()  => {
             <Description>
               There are so many different options, avenues and <Highlight>opportunities</Highlight> out there when it comes to your property - <Highlight>we understand</Highlight> better than most how difficult the decision can be.
               <br /><br />
-              Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your indivudual situation and the avenues available to you. 
+              Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your indivudual situation and the avenues available to you.
               We will be able to <Highlight>advise</Highlight> and recommend a <Highlight>great solution</Highlight> for you, with <Highlight>no obligations or charges</Highlight>.
               <br /><br />
-              If at this point you decide you would like for us to help, our <Highlight>1-2-1 dedicated team member</Highlight> will guide you through the next steps, <Highlight>removing all hassle and stress!</Highlight>
+              If at this point you decide you would like for us to help, our <Highlight>1-2-1 dedicated team member</Highlight> will guide you through the next steps, <Highlight>removing all hassle</Highlight> and stress!
             </Description>
             <Button onClick={() => handleClick("Arrange a Consultation")} primary>Arrange a consultation</Button>
           </Text>

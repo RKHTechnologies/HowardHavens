@@ -11,7 +11,26 @@ const Container = styled.div`
 const About: FC = () => {
   return (
     <Container>
+      Howard Havens is a 
+
+      well trained property experts, combined with creative solutions - we can find a fantastic solution for our clients where lots of other organisations would have turned away. 
+
+      Our focus is on building strong relationships, and providing the best answer for your personal situation, rather than the best for us.
       
+   
+
+      property company, 
+
+      Proud
+      value relationships and being a family run business
+
+
+      creativity
+      answer for every issue
+
+
+
+      We deal with all manner of clients, whether you're looking to quickly and reliably sell your proprety, 
 
 
       Howard Havens is your local family owned and run property company.   ... modern take ... places the customer at the heart ... customers are both the clients that we work with as well as the tennants within the property ... with years of property experience 

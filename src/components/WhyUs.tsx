@@ -70,7 +70,7 @@ export const Title = styled.h2`
   margin-top: 21px;
   margin-bottom: 0;
   color: ${colours.dark};
-  font-weight: 500;
+  font-weight: 400;
 `;
 
 export const Description = styled.p`

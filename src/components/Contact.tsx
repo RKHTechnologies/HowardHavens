@@ -48,12 +48,12 @@ const MainHeader = styled.h1`
 
 const SubHeader = styled.div`
   max-width: 1000px;
-  font-weight: 500;
-  color: ${colours.dark};
+  font-weight: 300;
+  color: ${colours.light};
+  margin-bottom: 25px;
 
   span {
-    color: ${colours.light};
-    font-weight: 300;
+    font-weight: 600;
     font-style: italic;
   }
 `;
