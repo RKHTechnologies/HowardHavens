@@ -1,29 +1,33 @@
 {
   "files": {
-    "main.css": "/howardhavens/static/css/main.931c8de3.chunk.css",
-    "main.js": "/howardhavens/static/js/main.c7b2c258.chunk.js",
-    "main.js.map": "/howardhavens/static/js/main.c7b2c258.chunk.js.map",
+    "main.css": "/howardhavens/static/css/main.70b3ead8.chunk.css",
+    "main.js": "/howardhavens/static/js/main.197e6dba.chunk.js",
+    "main.js.map": "/howardhavens/static/js/main.197e6dba.chunk.js.map",
     "runtime-main.js": "/howardhavens/static/js/runtime-main.2784b61b.js",
     "runtime-main.js.map": "/howardhavens/static/js/runtime-main.2784b61b.js.map",
-    "static/js/2.2c66148c.chunk.js": "/howardhavens/static/js/2.2c66148c.chunk.js",
-    "static/js/2.2c66148c.chunk.js.map": "/howardhavens/static/js/2.2c66148c.chunk.js.map",
+    "static/js/2.b4ea7766.chunk.js": "/howardhavens/static/js/2.b4ea7766.chunk.js",
+    "static/js/2.b4ea7766.chunk.js.map": "/howardhavens/static/js/2.b4ea7766.chunk.js.map",
     "index.html": "/howardhavens/index.html",
-    "precache-manifest.040132f5f5be7ca0a529fd2659606675.js": "/howardhavens/precache-manifest.040132f5f5be7ca0a529fd2659606675.js",
+    "precache-manifest.1f88bcc1c30a33b1c8d59e03f69bbda3.js": "/howardhavens/precache-manifest.1f88bcc1c30a33b1c8d59e03f69bbda3.js",
     "service-worker.js": "/howardhavens/service-worker.js",
-    "static/css/main.931c8de3.chunk.css.map": "/howardhavens/static/css/main.931c8de3.chunk.css.map",
-    "static/js/2.2c66148c.chunk.js.LICENSE.txt": "/howardhavens/static/js/2.2c66148c.chunk.js.LICENSE.txt",
+    "static/css/main.70b3ead8.chunk.css.map": "/howardhavens/static/css/main.70b3ead8.chunk.css.map",
+    "static/js/2.b4ea7766.chunk.js.LICENSE.txt": "/howardhavens/static/js/2.b4ea7766.chunk.js.LICENSE.txt",
     "static/media/Check_Icon.svg": "/howardhavens/static/media/Check_Icon.dd26c647.svg",
     "static/media/RKHT_logo.png": "/howardhavens/static/media/RKHT_logo.8c8521de.png",
+    "static/media/deal.jpg": "/howardhavens/static/media/deal.ef8736a8.jpg",
+    "static/media/explaining.jpg": "/howardhavens/static/media/explaining.e01940f8.jpg",
+    "static/media/growPounds.jpg": "/howardhavens/static/media/growPounds.fbaeb946.jpg",
     "static/media/house1.jpg": "/howardhavens/static/media/house1.42a310fa.jpg",
     "static/media/house2.jpg": "/howardhavens/static/media/house2.b078b5b9.jpg",
     "static/media/logo.svg": "/howardhavens/static/media/logo.0cd80aa6.svg",
     "static/media/logoWhite.svg": "/howardhavens/static/media/logoWhite.7de22b22.svg",
-    "static/media/talkThrough.jpg": "/howardhavens/static/media/talkThrough.c30073ce.jpg"
+    "static/media/talkThrough.jpg": "/howardhavens/static/media/talkThrough.c30073ce.jpg",
+    "static/media/tenantBuyers.jpg": "/howardhavens/static/media/tenantBuyers.13cd47a5.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2784b61b.js",
-    "static/js/2.2c66148c.chunk.js",
-    "static/css/main.931c8de3.chunk.css",
-    "static/js/main.c7b2c258.chunk.js"
+    "static/js/2.b4ea7766.chunk.js",
+    "static/css/main.70b3ead8.chunk.css",
+    "static/js/main.197e6dba.chunk.js"
   ]
 }

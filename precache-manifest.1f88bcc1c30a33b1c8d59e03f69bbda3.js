@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d94aa130dbe3b4e7440953c3aad13287",
+    "revision": "e1e596bc6bb25c0e5b514f372643e257",
     "url": "/howardhavens/index.html"
   },
   {
-    "revision": "4d3046c69eb018454be8",
-    "url": "/howardhavens/static/css/main.931c8de3.chunk.css"
+    "revision": "8cb5ce4477b4489a5445",
+    "url": "/howardhavens/static/css/main.70b3ead8.chunk.css"
   },
   {
-    "revision": "9722eb82ad05f74e2792",
-    "url": "/howardhavens/static/js/2.2c66148c.chunk.js"
+    "revision": "67824c7a0469f1885d4d",
+    "url": "/howardhavens/static/js/2.b4ea7766.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/howardhavens/static/js/2.2c66148c.chunk.js.LICENSE.txt"
+    "url": "/howardhavens/static/js/2.b4ea7766.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4d3046c69eb018454be8",
-    "url": "/howardhavens/static/js/main.c7b2c258.chunk.js"
+    "revision": "8cb5ce4477b4489a5445",
+    "url": "/howardhavens/static/js/main.197e6dba.chunk.js"
   },
   {
     "revision": "cbfde94ac3bd448a1df5",
@@ -30,6 +30,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8c8521de0a6ef7b932fad842b51b3450",
     "url": "/howardhavens/static/media/RKHT_logo.8c8521de.png"
+  },
+  {
+    "revision": "ef8736a83fa1443f25542f991d0d1539",
+    "url": "/howardhavens/static/media/deal.ef8736a8.jpg"
+  },
+  {
+    "revision": "e01940f8a206ac9034971b0c130429a2",
+    "url": "/howardhavens/static/media/explaining.e01940f8.jpg"
+  },
+  {
+    "revision": "fbaeb946c4f260016cd394d253c92c44",
+    "url": "/howardhavens/static/media/growPounds.fbaeb946.jpg"
   },
   {
     "revision": "42a310fa0b5a5ebd0347dd29ec7b3dda",
@@ -50,5 +62,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c30073cecb3b38bac971004222d248bb",
     "url": "/howardhavens/static/media/talkThrough.c30073ce.jpg"
+  },
+  {
+    "revision": "13cd47a5e14b936b36fd0aaea446ab03",
+    "url": "/howardhavens/static/media/tenantBuyers.13cd47a5.jpg"
   }
 ]);
