@@ -41,6 +41,7 @@ interface ImageProps {
   image: imageLib;
   alt?: boolean;
   short?: boolean;
+  right?: boolean;
 }
 
 const Image = styled.div`
@@ -51,6 +52,7 @@ const Image = styled.div`
   background-image: url(${(p: ImageProps) => ImagesDesktop[p.image]});
   background-size: cover;
   background-position: center;
+  background-position-x: ${(p: ImageProps) => p.right ? "right" : null};
   text-align: right;
   margin:  ${(p: ImageProps) => p.alt ? "auto auto auto 0" : "auto 0 auto auto"};
 
@@ -161,7 +163,7 @@ const Services: FC = ()  => {
 
       <Strip id="sales">
         <Service>
-          <Image image="deal" />
+          <Image image="deal" right />
           <Text>
             <Title>Need to sell quickly?</Title>
             <Description>
