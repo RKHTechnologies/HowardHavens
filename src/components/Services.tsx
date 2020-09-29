@@ -40,12 +40,13 @@ const Service = styled.div`
 interface ImageProps {
   image: imageLib;
   alt?: boolean;
+  short?: boolean;
 }
 
 const Image = styled.div`
   grid-area: image;
   width: 80%;
-  height: 500px;
+  height: ${(p: ImageProps) => p.short ? "400px" : "500px"};
   background: lightgrey;
   background-image: url(${(p: ImageProps) => ImagesDesktop[p.image]});
   background-size: cover;
@@ -67,6 +68,7 @@ const Text = styled.div`
   grid-area: text;
   padding: 0 20px;
   text-align: ${(p: ServiceProps) => p.alt ? "right" : null};
+  padding-left: ${(p: ServiceProps) => p.alt ? "50px" : null};
 
   @media(max-width: ${SharedSettings.mobile}) {
     padding: 0 10px;
@@ -74,18 +76,25 @@ const Text = styled.div`
   }
 `;
 
+
+
 const Title = styled.h1`
   font-weight: 400;
   margin-top: 0;
   font-size: 2.5em;
   color: ${colours.primary};
+  padding-left: ${(p: ServiceProps) => p.alt ? "50px" : null};
+  text-align: ${(p: ServiceProps) => p.alt ? "left" : null};
 
   @media(max-width: ${SharedSettings.mobile}) {
     font-size: 2em;
   }
 `;
 
-const Description = styled.div``;
+const Description = styled.div`
+  text-align: ${(p: ServiceProps) => p.alt ? "justify" : null};
+  padding-left: ${(p: ServiceProps) => p.alt ? "50px" :  null};
+`;
 
 const CheckList = styled.div`
   margin-top: 20px;
@@ -152,7 +161,7 @@ const Services: FC = ()  => {
 
       <Strip id="sales">
         <Service>
-          <Image image="house1" />
+          <Image image="deal" />
           <Text>
             <Title>Need to sell quickly?</Title>
             <Description>
@@ -176,10 +185,10 @@ const Services: FC = ()  => {
 
       <Strip alt id="discuss">
         <Service alt>
-          <Image image="talkThrough" alt />
+          <Image image="explaining" alt short />
           <Text alt>
-            <Title>Want someone to talk through your options?</Title>
-            <Description>
+            <Title alt>Want someone to talk through your options?</Title>
+            <Description alt>
               There are so many different options, avenues and <Highlight>opportunities</Highlight> out there when it comes to your property - <Highlight>we understand</Highlight> better than most how difficult the decision can be.
               <br /><br />
               Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your indivudual situation and the avenues available to you.
@@ -194,7 +203,7 @@ const Services: FC = ()  => {
 
       <Strip id="tenantbuyers">
         <Service>
-          <Image image="house1" />
+          <Image image="tenantBuyers" />
           <Text>
             <Title>Why rent, when you can be a tenant buyer?</Title>
             <Description>
@@ -216,13 +225,13 @@ const Services: FC = ()  => {
 
       <Strip alt id="dealsourcing">
         <Service alt>
-          <Image image="house1" alt />
+          <Image image="growPounds" alt short />
           <Text alt>
-            <Title>Investors, would you like to be receive great deals to your inbox?</Title>
-            <Description>
-              At Howard Havens we have our own <Highlight>Deal Sourcing mailing list</Highlight>, so you can receive a <Highlight>personally tailored</Highlight> selection of our bespoke <Highlight>packaged deals</Highlight> deliverred to your virtual doorstep.
+            <Title alt>Investors, would you like to receive great deals to your inbox?</Title>
+            <Description alt>
+              At Howard Havens we have our own <Highlight>deal sourcing mailing list</Highlight>, so you can receive a <Highlight>personally tailored</Highlight> selection of our bespoke <Highlight>packaged deals</Highlight> deliverred to your virtual doorstep.
               <br /><br />
-              Once you get in contact, we can look to establish what kind of property deal you are seeking; be it <Highlight>location, condition, price</Highlight> or which <Highlight>strategy</Highlight> you are specifically targeting.
+              Once you get in contact, we can look to establish what kind of property deal you are seeking; be it location, condition, price or which <Highlight>strategy</Highlight> you are specifically targeting.
               <br />
               We will then get you added into our <Highlight>exclusive mailing list</Highlight> to be one of the first to review <Highlight>fantastic opportunities</Highlight> for you and your business.
             </Description>

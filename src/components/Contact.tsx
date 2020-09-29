@@ -38,7 +38,7 @@ const MainHeader = styled.h1`
   font-weight: 400;
   color: ${colours.light};
   font-size: 2.5em;
-  font-weight: 600;
+  font-weight: 400;
   margin-top: 20px;
 
   @media(max-width: ${SharedSettings.mobile}) {
