@@ -90,12 +90,18 @@ const Title = styled.h1`
 
   @media(max-width: ${SharedSettings.mobile}) {
     font-size: 2em;
+    padding-left: 0;
   }
 `;
 
 const Description = styled.div`
   text-align: ${(p: ServiceProps) => p.alt ? "justify" : null};
   padding-left: ${(p: ServiceProps) => p.alt ? "50px" :  null};
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    text-align: justify;
+    padding-left: 0;
+  }
 `;
 
 const CheckList = styled.div`

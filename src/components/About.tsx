@@ -1,11 +1,17 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+import { SharedSettings } from '../Shared/SharedStyles';
 
 const Container = styled.div`
   width: 100%;
   text-align: center;
   margin: 30px 0 20px;
   font-size: 1.2em;
+
+  @media(max-width: ${SharedSettings.mobile}) {
+    margin-top: 50px;
+    text-align: justify;
+  }
 `;
 
 const About: FC = () => {
