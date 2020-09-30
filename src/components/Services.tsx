@@ -150,11 +150,10 @@ const Highlight = styled.span`
 
 const Services: FC = ()  => {
 
-  const handleClick = (subject: string) => {
+  const handleClick = (subject: string, address: string) => {
     window.open(
-      `mailto:Contact@howardhavens.co.uk
-        ?subject=${subject}`,
-        '_blank'
+      `mailto:${address}@howardhavens.co.uk?subject=${subject}`,
+      '_blank'
     );
   }
 
@@ -180,7 +179,7 @@ const Services: FC = ()  => {
                 <li>Facing Divorce? We're here to resolve your property concerns</li>
                 <li>Had deals fall through? We follow through with our carefully considered offers</li>
               </CheckList>
-              <Button onClick={() => handleClick("Sales Enquiry")} >Contact Us Today</Button>
+              <Button onClick={() => handleClick("Sales Enquiry", "Sales")} >Contact Us Today</Button>
           </Text>
         </Service>
       </Strip>
@@ -198,7 +197,7 @@ const Services: FC = ()  => {
               <br /><br />
               If at this point you decide you would like for us to help, our <Highlight>1-2-1 dedicated team member</Highlight> will guide you through the next steps, <Highlight>removing all hassle</Highlight> and stress!
             </Description>
-            <Button onClick={() => handleClick("Arrange a Consultation")} primary>Arrange a consultation</Button>
+            <Button onClick={() => handleClick("Arrange a Consultation", "Advice")} primary>Arrange a consultation</Button>
           </Text>
         </Service>
       </Strip>
@@ -220,7 +219,7 @@ const Services: FC = ()  => {
               <li>Live in your home, whilst you improve your credit rating</li>
               <li>You're free to make the property your own</li>
             </CheckList>
-            <Button onClick={() => handleClick("Tenant Buyers")}>Contact us to find out more</Button>
+            <Button onClick={() => handleClick("Tenant Buyers", "Contact")}>Contact us to find out more</Button>
           </Text>
         </Service>
       </Strip>
@@ -237,7 +236,7 @@ const Services: FC = ()  => {
               <br />
               We will then get you added into our <Highlight>exclusive mailing list</Highlight> to be one of the first to review <Highlight>fantastic opportunities</Highlight> for you and your business.
             </Description>
-            <Button onClick={() => handleClick("Deal Sourcincg")} primary>Don't miss out, Contact Now</Button>
+            <Button onClick={() => handleClick("Deal Sourcincg", "Sourcing")} primary>Don't miss out, Contact Now</Button>
           </Text>
         </Service>
       </Strip>

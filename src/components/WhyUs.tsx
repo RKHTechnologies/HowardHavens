@@ -104,7 +104,7 @@ const WhyUs: FC = () => {
         <GridItem>
           <Icon icon={faPeopleArrows} size="2x" />
           <Title>1-2-1 Dedicated Customer Service</Title>
-          <Description>You'll have a single dedicated staff member, there to guide and assist you throughout</Description>
+          <Description>You'll have a single dedicated team member, there to guide and assist you throughout</Description>
         </GridItem>
         
         <GridItem>

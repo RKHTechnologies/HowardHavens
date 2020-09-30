@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { colours, Section, SharedSettings } from "../Shared/SharedStyles";
+import { colours, SharedSettings } from "../Shared/SharedStyles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHammer, faSearchLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faSearchLocation, faEnvelope, faSmile } from '@fortawesome/free-solid-svg-icons';
 
 interface ContainerProps {
   dark?: boolean;
@@ -60,7 +60,7 @@ const SubHeader = styled.div`
 
 const LinksContainer = styled.div`
   padding: 20px;
-  max-width: 1000px;
+  max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1fr;  
 
@@ -224,13 +224,13 @@ const Contact: React.FC = () => {
       <SubHeader>Please get in touch <span>today</span> if you have any questions, are interested in any of our <span>services</span> - or are looking for <span>hassle free solutions</span> to your property needs!</SubHeader>
 
       <LinksContainer>
-        <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>
+        <Link active={activeLink === "Sales"} onClick={() => setActiveLink("Sales")}>
           <Icon icon={faHome} size="2x" />
-          Lettings@howardhavens.co.uk
+          Sales@howardhavens.co.uk
         </Link>
-        <Link active={activeLink === "Projects"} onClick={() => setActiveLink("Projects")}>
-          <Icon icon={faHammer} size="2x"/>
-          Projects@howardhavens.co.uk
+        <Link active={activeLink === "Advice"} onClick={() => setActiveLink("Advice")}>
+          <Icon icon={faSmile} size="2x"/>
+          Advice@howardhavens.co.uk
         </Link>
         <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
           <Icon icon={faSearchLocation} size="2x"/>
