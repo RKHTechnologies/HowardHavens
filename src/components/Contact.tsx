@@ -173,7 +173,7 @@ const SubmitButton = styled.input`
   cursor: pointer;
 
   &:hover {
-    background: ${colours.dark};
+    background: ${colours.light};
     color: ${colours.primary};
   }
 

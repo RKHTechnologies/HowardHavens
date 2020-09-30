@@ -13,7 +13,7 @@ const About: FC = () => {
     <Container>
       At Howard Havens we believe in providing you the result you are seeking - quickly, reliably and giving you peace of mind throughout the whole process. 
       <br /><br />
-      Our expert teams members are fantastic at employing creative solutions, allowing them to find the best possible answer to your unique circumstances and requirements. Due to these, they can move much more rapidly than traditional home sales, with most deals completing in less than 30 days after offer.
+      Our expert team members are fantastic at employing creative solutions, allowing them to find the best possible answer to your unique circumstances and requirements. Due to this, they can move much more rapidly than traditional home sales, with most deals completing in less than 30 days after offer.
     </Container>
   );
 }

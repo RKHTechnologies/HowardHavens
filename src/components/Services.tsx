@@ -168,14 +168,14 @@ const Services: FC = ()  => {
             <Description>
               We make the sales process simple, easy and stress free, taking care of everything for you!
               <br />
-              Due to our personal, creative and tailor made solutions, we can guarantee you a fast, reliable sale and help get you up to 100% of the market value.
+              Due to our personal, creative and tailor made solutions, we can guarantee you a fast, reliable sale, and help get you up to 100% of the market value.
             </Description>
             <CheckList>
                 <li>Cash Offers allow us to move extremely quickly</li>
-                <li>We cover the costs of all solicitor fees</li>
+                <li>We cover the costs of all solicitors fees</li>
                 <li>Any size or condition of property considered</li>
                 <li>Fed up of being a landlord, or become an accidental landlord?</li>
-                <li>Mortgage Arears, unmortgageable, or repossession concerns? We can help</li>
+                <li>Mortgage arears, unmortgageable, or repossession concerns? We can help</li>
                 <li>Facing Divorce? We're here to resolve your property concerns</li>
                 <li>Had deals fall through? We follow through with our carefully considered offers</li>
               </CheckList>
@@ -192,7 +192,7 @@ const Services: FC = ()  => {
             <Description alt>
               There are so many different options, avenues and <Highlight>opportunities</Highlight> out there when it comes to your property - <Highlight>we understand</Highlight> better than most how difficult the decision can be.
               <br /><br />
-              Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your indivudual situation and the avenues available to you.
+              Howard Havens are here to de-mystify, and <Highlight>remove any stresses</Highlight> involved; Our experts are on hand to discuss your individual situation and the avenues available to you.
               We will be able to <Highlight>advise</Highlight> and recommend a <Highlight>great solution</Highlight> for you, with <Highlight>no obligations or charges</Highlight>.
               <br /><br />
               If at this point you decide you would like for us to help, our <Highlight>1-2-1 dedicated team member</Highlight> will guide you through the next steps, <Highlight>removing all hassle</Highlight> and stress!
@@ -230,9 +230,9 @@ const Services: FC = ()  => {
           <Text alt>
             <Title alt>Investors, would you like to receive great deals to your inbox?</Title>
             <Description alt>
-              At Howard Havens we have our own <Highlight>deal sourcing mailing list</Highlight>, so you can receive a <Highlight>personally tailored</Highlight> selection of our bespoke <Highlight>packaged deals</Highlight> deliverred to your virtual doorstep.
+              At Howard Havens we have our own <Highlight>deal sourcing mailing list</Highlight>, so you can receive a <Highlight>personally tailored</Highlight> selection of our bespoke <Highlight>packaged deals</Highlight> delivered to your virtual doorstep.
               <br /><br />
-              Once you get in contact, we can look to establish what kind of property deal you are seeking; be it location, condition, price or which <Highlight>strategy</Highlight> you are specifically targeting.
+              Once you get in contact, we can look to establish what kind of property deal you are seeking; be its location, condition, price or which <Highlight>strategy</Highlight> you are specifically targeting.
               <br />
               We will then get you added into our <Highlight>exclusive mailing list</Highlight> to be one of the first to review <Highlight>fantastic opportunities</Highlight> for you and your business.
             </Description>
