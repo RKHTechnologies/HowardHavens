@@ -99,8 +99,12 @@ const FullScreenHero: FC = () => {
     if (link !== "about")
         scrollPosition = scrollPosition - 100;
     
-    window.scrollTo(0, scrollPosition);
-  }
+    window.scrollTo({
+        left: 0,
+        top: scrollPosition,
+        behavior: 'smooth',
+    });
+  };
 
   return (
     <>

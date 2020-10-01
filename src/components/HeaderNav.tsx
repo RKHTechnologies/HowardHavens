@@ -190,13 +190,22 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
         if (link === "contact")
         scrollPosition = scrollPosition - (window.innerWidth > 1100 ? 80 : 70);
 
-        window.scrollTo(0, scrollPosition);
-    }
+        window.scrollTo({
+            left: 0,
+            top: scrollPosition,
+            behavior: 'smooth',
+        });
+    };
 
 
     const burgerClick = (stickyHeader?: boolean) => {
         if (!stickyHeader) {
-            window.scrollTo(0, window.innerHeight);
+            window.scrollTo({
+                left: 0,
+                top: window.innerHeight,
+                behavior: 'smooth',
+            });
+
             setTimeout(() => setMenuOpen(!menuOpen), 200);
         }
         else
