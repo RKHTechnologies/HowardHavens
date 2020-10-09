@@ -158,7 +158,7 @@ const Services: FC = ()  => {
 
   const handleClick = (subject: string, address: string) => {
     window.open(
-      `mailto:${address}@howardhavens.co.uk?subject=${subject}`,
+      `mailto:${address}@howardhavens.com?subject=${subject}`,
       '_blank'
     );
   }

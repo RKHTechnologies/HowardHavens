@@ -206,7 +206,7 @@ const Contact: React.FC = () => {
     console.dir(json);
 
     window.open(
-      `mailto:${(activeLink !== "" && activeLink) || "Contact"}@howardhavens.co.uk
+      `mailto:${(activeLink !== "" && activeLink) || "Contact"}@howardhavens.com
         ?subject=${newObject.subject}
         &body=%0D%0A
         Name: ${newObject.name}%0D%0A
@@ -226,19 +226,19 @@ const Contact: React.FC = () => {
       <LinksContainer>
         <Link active={activeLink === "Sales"} onClick={() => setActiveLink("Sales")}>
           <Icon icon={faHome} size="2x" />
-          Sales@howardhavens.co.uk
+          Sales@howardhavens.com
         </Link>
         <Link active={activeLink === "Advice"} onClick={() => setActiveLink("Advice")}>
           <Icon icon={faSmile} size="2x"/>
-          Advice@howardhavens.co.uk
+          Advice@howardhavens.com
         </Link>
         <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
           <Icon icon={faSearchLocation} size="2x"/>
-          Sourcing@howardhavens.co.uk
+          Sourcing@howardhavens.com
         </Link>
         <Link active={activeLink === "Contact"} onClick={() => setActiveLink("Contact")}>
           <Icon icon={faEnvelope} size="2x"/>
-          Contact@howardhavens.co.uk
+          Contact@howardhavens.com
         </Link>
       </LinksContainer>
 
